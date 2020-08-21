@@ -134,7 +134,10 @@ namespace VMware.Horizon.RESTAPI.Client
             // add file parameter, if any
             foreach(var param in fileParams)
             {
-                request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);
+                var p = param.Value.Writer;
+                MemoryStream ms = new MemoryStream();
+                p.Invoke(ms);
+                request.AddFile(param.Value.Name, ms.ToArray(), param.Value.FileName, param.Value.ContentType);
             }
 
             if (postBody != null) // http body (model or byte[]) parameter
