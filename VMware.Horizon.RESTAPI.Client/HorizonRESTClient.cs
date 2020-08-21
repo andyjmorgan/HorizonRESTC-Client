@@ -7,12 +7,12 @@ using VMware.Horizon.RESTAPI.Model;
 namespace VMware.Horizon.RESTAPI.Client
 {
 
-    public class Client
+    public class HorizonRESTClient
     {
         private Uri BaseURI { get; set; }
         private AuthTokens Tokens { get; set; }
         public Configuration ClientConfiguration { get; set; }
-        public Client(string BaseURL)
+        public HorizonRESTClient(string BaseURL)
         {
             BaseURI = new Uri(BaseURL);
             ClientConfiguration = new Configuration();
