@@ -18,7 +18,6 @@ To speed up the digestion of the API, I've created a helper class to wrap up the
 <a name="frameworks-supported"></a>
 ## Frameworks supported
 - .NET 4.5 or later
-- Windows Phone 7.1 (Mango)
 
 <a name="dependencies"></a>
 ## Dependencies
