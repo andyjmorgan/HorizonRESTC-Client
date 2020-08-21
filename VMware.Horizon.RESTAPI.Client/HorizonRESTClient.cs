@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Dynamic;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using VMware.Horizon.RESTAPI.Api;
 using VMware.Horizon.RESTAPI.Model;
 
 namespace VMware.Horizon.RESTAPI.Client
 {
-
     public class HorizonRESTClient
     {
         private Uri BaseURI { get; set; }
@@ -34,7 +35,7 @@ namespace VMware.Horizon.RESTAPI.Client
 
 
 
-        public  void Logon(string username, string password, string domain)
+        public void Logon(string username, string password, string domain)
         {
             var tokens = Authentication.LoginUser(new Model.AuthLogin(domain,
                 password,
@@ -47,13 +48,13 @@ namespace VMware.Horizon.RESTAPI.Client
             else
             {
                 Tokens = tokens;
-                ClientConfiguration.AddApiKey("Authorization", string.Format("Bearer {0}", tokens.AccessToken)); 
+                ClientConfiguration.AddApiKey("Authorization", string.Format("Bearer {0}", tokens.AccessToken));
             }
         }
 
-        public  void TryRefreshSession()
+        public void TryRefreshSession()
         {
-            AccessToken Token =  Authentication.RefreshAccessToken(new RefreshToken(Tokens.RefreshToken));
+            AccessToken Token = Authentication.RefreshAccessToken(new RefreshToken(Tokens.RefreshToken));
             if (Token == null)
             {
                 throw new Exception("Access Token received was null or empty");

@@ -67,6 +67,6 @@ OpenAPI spec version: 1.0.0
   </ItemGroup>
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)bin</PostBuildEvent>
+    <PostBuildEvent>copy $(Targetdir)*.dll $(SolutionDir)binaries</PostBuildEvent>
   </PropertyGroup>
 </Project>

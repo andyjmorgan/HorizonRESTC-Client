@@ -4,11 +4,11 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VMware.Horizon.RESTAPI", "src\VMware.Horizon.RESTAPI\VMware.Horizon.RESTAPI.csproj", "{02821963-4FCF-41A2-8A57-BCC9E6916D50}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VMware.Horizon.RESTAPI.Client", "VMware.Horizon.RESTAPI.Client\VMware.Horizon.RESTAPI.Client.csproj", "{5452BE90-7A3B-40AD-9620-650520C6A890}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VMware.Horizon.RESTAPI.Client.Example", "VMware.Horizon.RESTAPI.Client.Example\VMware.Horizon.RESTAPI.Client.Example.csproj", "{A74A6E8E-BF86-41EA-842F-D4C38769244F}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VMware.Horizon.RESTAPI.Client.VBExample", "VMware.Horizon.RESTAPI.Client.VBExample\VMware.Horizon.RESTAPI.Client.VBExample.vbproj", "{9D4A66A4-7289-4A7A-A9E0-91D478C63FA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VMware.Horizon.RESTAPI.Client", "VMware.Horizon.RESTAPI.Client\VMware.Horizon.RESTAPI.Client.csproj", "{774305D0-5989-4096-95F3-DCF8370F444E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +20,6 @@ Global
 		{02821963-4FCF-41A2-8A57-BCC9E6916D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02821963-4FCF-41A2-8A57-BCC9E6916D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02821963-4FCF-41A2-8A57-BCC9E6916D50}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5452BE90-7A3B-40AD-9620-650520C6A890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5452BE90-7A3B-40AD-9620-650520C6A890}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5452BE90-7A3B-40AD-9620-650520C6A890}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5452BE90-7A3B-40AD-9620-650520C6A890}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A74A6E8E-BF86-41EA-842F-D4C38769244F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A74A6E8E-BF86-41EA-842F-D4C38769244F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A74A6E8E-BF86-41EA-842F-D4C38769244F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -32,6 +28,10 @@ Global
 		{9D4A66A4-7289-4A7A-A9E0-91D478C63FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D4A66A4-7289-4A7A-A9E0-91D478C63FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D4A66A4-7289-4A7A-A9E0-91D478C63FA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{774305D0-5989-4096-95F3-DCF8370F444E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774305D0-5989-4096-95F3-DCF8370F444E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774305D0-5989-4096-95F3-DCF8370F444E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774305D0-5989-4096-95F3-DCF8370F444E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

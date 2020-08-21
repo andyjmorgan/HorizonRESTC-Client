@@ -51,11 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\VMware.Horizon.RESTAPI\VMware.Horizon.RESTAPI.csproj">
-      <Project>{02821963-4fcf-41a2-8a57-bcc9e6916d50}</Project>
+      <Project>{02821963-4FCF-41A2-8A57-BCC9E6916D50}</Project>
       <Name>VMware.Horizon.RESTAPI</Name>
     </ProjectReference>
     <ProjectReference Include="..\VMware.Horizon.RESTAPI.Client\VMware.Horizon.RESTAPI.Client.csproj">
-      <Project>{5452be90-7a3b-40ad-9620-650520c6a890}</Project>
+      <Project>{774305d0-5989-4096-95f3-dcf8370f444e}</Project>
       <Name>VMware.Horizon.RESTAPI.Client</Name>
     </ProjectReference>
   </ItemGroup>
