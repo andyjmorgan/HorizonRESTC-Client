@@ -6,13 +6,15 @@ The documentation for the sub API's can be found here:
 
 https://code.vmware.com/apis/1007/view-rest-api
 
+To speed up the digestion of the API, I've created a helper class to wrap up the authentication, refresh and log off attributes and embedded the sub API's under a single object to be utilized.
+
 This repo contains:
 
 - The native REST Object
 - A helper class for quick start
-- A sample console application
+- A sample console application for c#
+- A sample console application for vb
 
-To speed up the digestion of the API, I've created a helper class to wrap up the authentication, refresh and log off attributes and embedded the sub API's under a single object to be utilized.
 
 
 <a name="frameworks-supported"></a>
