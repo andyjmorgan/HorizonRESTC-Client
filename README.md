@@ -1,6 +1,6 @@
 ## VMware Horizon Rest C# Client
 
-This repo, is an example of the VMware Horizon REST API, converted using Swagger Codegen, for native use in .Net Framework (>=4.6.1) c#. 
+This repo, is an example of the VMware Horizon REST API, converted using Swagger Codegen, for native use in .Net Framework. 
 
 The documentation for the sub API's can be found here: 
 
