@@ -12,29 +12,16 @@ This repo contains:
 
 - The native REST Object
 - A helper class for quick start
-- A sample console application for c#
-- A sample console application for vb
+- A sample console application for c# .Net Framework 4.7.2
+- A sample console applicaition for c# .Net Core 2.0
+- A sample console application for vb .Net Framework 4.7.2
 
 
 
 <a name="frameworks-supported"></a>
 ## Frameworks supported
-- .NET 4.6.1 or later
-
-<a name="dependencies"></a>
-## Dependencies
-- [RestSharp](https://www.nuget.org/packages/RestSharp) - 105.1.0 or later
-- [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) - 7.0.0 or later
-- [JsonSubTypes](https://www.nuget.org/packages/JsonSubTypes/) - 1.2.0 or later
-- VMware Horizon 8
-
-The DLLs included in the package may not be the latest version. We recommend using [NuGet](https://docs.nuget.org/consume/installing-nuget) to obtain the latest version of the packages:
-```
-Install-Package RestSharp
-Install-Package Newtonsoft.Json
-Install-Package JsonSubTypes
-```
-
+- .NET 4.7.2
+- .NET Core 2.0
 
 ## Demo Application:
 
@@ -43,79 +30,80 @@ The demo project & code below are a small insight into how quickly you can begin
 **c#**
 
 ``` c#
-namespace VMware.Horizon.RESTAPI.Client.Example
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            HorizonRESTClient client = new HorizonRESTClient("https://connectionserver.domain.local/rest");
-
+            HorizonRESTClient client = new HorizonRESTClient("https://ConnectionServer.Domain.local/rest");
             try
             {
-                client.Logon("username", "password", "domain");
-                
+                client.Logon("UserName", "Password", "Domain");
+
                 // list all farms health
                 var farms = client.Monitoring.ListFarmMonitors();
+                Console.WriteLine("Farms: {0}", farms.Count);
 
                 // list all rdsh servers health
                 var RDSHServers = client.Monitoring.ListRDSServerMonitors();
+                Console.WriteLine("RDSHServers: {0}", RDSHServers.Count);
 
                 //list all connection servers health
                 var ConnectionServers = client.Monitoring.ListConnectionServerMonitors();
-
+                Console.WriteLine("ConnectionServers: {0}", ConnectionServers.Count);
 
                 // demo the ability to refresh
-                client.TryRefreshSession();
+                client.RefreshToken();
 
-                var pools = client.Inventory.ListDesktopPools();
-                
+                var Pools = client.Inventory.ListDesktopPools();
+                Console.WriteLine("pools: {0}", Pools.Count);
+
                 // get information about the first pool
-                var pool = client.Inventory.GetDesktopPool(pools[0].Id);
+                var Pool = client.Inventory.GetDesktopPool(Pools[0].Id);
+                Console.WriteLine("First Pool: {0}", Pool.DisplayName);
 
                 // pull active sessions
-                var sessions = client.Inventory.ListSessionInfo();
+                var Sessions = client.Inventory.ListSessionInfo();
+                Console.WriteLine("sessions: {0}", Sessions.Count);
 
                 // log out when complete
                 client.LogOut();
+                Console.ReadLine();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("Exception trapped during routine: {0}", ex.ToString());
             }
-
-
-        }
-    }
-}
 ```
 
 **VB.Net**
 
 ```vb
- Dim Client = New HorizonRESTClient("https://ConnectionServer.domain.local/rest")
-        Client.Logon("username", "password", "domain")
+        Dim Client = New HorizonRESTClient("https://ConnectionServer.Domain.local/rest")
+        Client.Logon("UserName", "Password", "Domain")
 
+        ' list all farms health
         Dim farms = Client.Monitoring.ListFarmMonitors()
+        Console.WriteLine("Farms: {0}", farms.Count)
 
-        'List all rdsh servers health
+        ' list all rdsh servers health
         Dim RDSHServers = Client.Monitoring.ListRDSServerMonitors()
+        Console.WriteLine("RDSHServers: {0}", RDSHServers.Count)
 
         'list all connection servers health
         Dim ConnectionServers = Client.Monitoring.ListConnectionServerMonitors()
-
+        Console.WriteLine("ConnectionServers: {0}", ConnectionServers.Count)
 
         ' demo the ability to refresh
-        Client.TryRefreshSession()
+        Client.RefreshToken()
 
-        Dim pools = Client.Inventory.ListDesktopPools()
+        Dim Pools = Client.Inventory.ListDesktopPools()
+        Console.WriteLine("pools: {0}", Pools.Count)
 
         ' get information about the first pool
-        Dim pool = Client.Inventory.GetDesktopPool(pools(0).Id)
+        Dim Pool = Client.Inventory.GetDesktopPool(Pools(0).Id)
+        Console.WriteLine("First Pool: {0}", Pool.DisplayName)
 
-        'pull active sessions
-        Dim sessions = Client.Inventory.ListSessionInfo()
+        ' pull active sessions
+        Dim Sessions = Client.Inventory.ListSessionInfo()
+        Console.WriteLine("sessions: {0}", Sessions.Count)
 
         ' log out when complete
         Client.LogOut()
+        Console.ReadLine()
 ```
