@@ -13,7 +13,7 @@ This repo contains:
 - The native REST Object
 - A helper class for quick start
 - A sample console application for c# .Net Framework 4.7.2
-- A sample console applicaition for c# .Net Core 2.0
+- A sample console application for c# .Net Core 2.0
 - A sample console application for vb .Net Framework 4.7.2
 
 
