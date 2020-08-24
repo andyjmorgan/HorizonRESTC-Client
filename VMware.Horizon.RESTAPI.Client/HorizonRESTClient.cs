@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VMware.Horizon.RESTAPI.Api;
 using VMware.Horizon.RESTAPI.Model;
 
@@ -52,7 +48,7 @@ namespace VMware.Horizon.RESTAPI.Client
             }
         }
 
-        public void TryRefreshSession()
+        public void RefreshToken()
         {
             AccessToken Token = Authentication.RefreshAccessToken(new RefreshToken(Tokens.RefreshToken));
             if (Token == null)
