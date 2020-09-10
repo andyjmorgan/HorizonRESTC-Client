@@ -11,6 +11,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using RestSharp.Portable;
 using VMware.Horizon.RESTAPI.Client;
@@ -34,7 +35,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> AddMachines (List<string> body, string id);
+        List<BulkItemResponseInfo> AddMachines(List<string> body, string id);
 
         /// <summary>
         /// Adds machines to the given manual desktop pool.
@@ -46,7 +47,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> AddMachinesWithHttpInfo (List<string> body, string id);
+        ApiResponse<List<BulkItemResponseInfo>> AddMachinesWithHttpInfo(List<string> body, string id);
         /// <summary>
         /// Adds the named machines to the given desktop pool.
         /// </summary>
@@ -57,7 +58,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of MachineSpecifiedName representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> AddMachinesByName (List<MachineSpecifiedName> body, string id);
+        List<BulkItemResponseInfo> AddMachinesByName(List<MachineSpecifiedName> body, string id);
 
         /// <summary>
         /// Adds the named machines to the given desktop pool.
@@ -69,7 +70,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of MachineSpecifiedName representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> AddMachinesByNameWithHttpInfo (List<MachineSpecifiedName> body, string id);
+        ApiResponse<List<BulkItemResponseInfo>> AddMachinesByNameWithHttpInfo(List<MachineSpecifiedName> body, string id);
         /// <summary>
         /// Assigns the specified users to the machine.
         /// </summary>
@@ -80,7 +81,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be assigned to the machine.</param>
         /// <param name="id">id</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> AssignUsers (List<string> body, string id);
+        List<BulkItemResponseInfo> AssignUsers(List<string> body, string id);
 
         /// <summary>
         /// Assigns the specified users to the machine.
@@ -92,7 +93,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be assigned to the machine.</param>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> AssignUsersWithHttpInfo (List<string> body, string id);
+        ApiResponse<List<BulkItemResponseInfo>> AssignUsersWithHttpInfo(List<string> body, string id);
         /// <summary>
         /// Creates an application pool.
         /// </summary>
@@ -102,7 +103,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Application pool object to be created.</param>
         /// <returns></returns>
-        void CreateApplicationPool (ApplicationPoolCreateSpec body);
+        void CreateApplicationPool(ApplicationPoolCreateSpec body);
 
         /// <summary>
         /// Creates an application pool.
@@ -113,7 +114,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Application pool object to be created.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateApplicationPoolWithHttpInfo (ApplicationPoolCreateSpec body);
+        ApiResponse<Object> CreateApplicationPoolWithHttpInfo(ApplicationPoolCreateSpec body);
         /// <summary>
         /// Deletes application pool.
         /// </summary>
@@ -123,7 +124,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns></returns>
-        void DeleteApplicationPool (string id);
+        void DeleteApplicationPool(string id);
 
         /// <summary>
         /// Deletes application pool.
@@ -134,7 +135,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteApplicationPoolWithHttpInfo (string id);
+        ApiResponse<Object> DeleteApplicationPoolWithHttpInfo(string id);
         /// <summary>
         /// Deletes the machine.
         /// </summary>
@@ -145,7 +146,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">The specification applicable to deleting the machine.</param>
         /// <param name="id">id</param>
         /// <returns></returns>
-        void DeleteMachine (MachineDeleteData body, string id);
+        void DeleteMachine(MachineDeleteData body, string id);
 
         /// <summary>
         /// Deletes the machine.
@@ -157,7 +158,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">The specification applicable to deleting the machine.</param>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteMachineWithHttpInfo (MachineDeleteData body, string id);
+        ApiResponse<Object> DeleteMachineWithHttpInfo(MachineDeleteData body, string id);
         /// <summary>
         /// Deletes the specified machines.
         /// </summary>
@@ -167,7 +168,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The machines and specification for deletion.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> DeleteMachines (MachineDeleteSpec body);
+        List<BulkItemResponseInfo> DeleteMachines(MachineDeleteSpec body);
 
         /// <summary>
         /// Deletes the specified machines.
@@ -178,7 +179,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The machines and specification for deletion.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> DeleteMachinesWithHttpInfo (MachineDeleteSpec body);
+        ApiResponse<List<BulkItemResponseInfo>> DeleteMachinesWithHttpInfo(MachineDeleteSpec body);
         /// <summary>
         /// Disconnects user sessions
         /// </summary>
@@ -188,7 +189,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be disconnected.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> DisconnectSessions (List<string> body);
+        List<BulkItemResponseInfo> DisconnectSessions(List<string> body);
 
         /// <summary>
         /// Disconnects user sessions
@@ -199,7 +200,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be disconnected.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> DisconnectSessionsWithHttpInfo (List<string> body);
+        ApiResponse<List<BulkItemResponseInfo>> DisconnectSessionsWithHttpInfo(List<string> body);
         /// <summary>
         /// Puts the machines into maintenance mode.
         /// </summary>
@@ -209,7 +210,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put into maintenance mode.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> EnterMaintenance (List<string> body);
+        List<BulkItemResponseInfo> EnterMaintenance(List<string> body);
 
         /// <summary>
         /// Puts the machines into maintenance mode.
@@ -220,7 +221,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put into maintenance mode.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> EnterMaintenanceWithHttpInfo (List<string> body);
+        ApiResponse<List<BulkItemResponseInfo>> EnterMaintenanceWithHttpInfo(List<string> body);
         /// <summary>
         /// Puts the machines out of maintenance mode.
         /// </summary>
@@ -230,7 +231,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put out of maintenance mode.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> ExitMaintenance (List<string> body);
+        List<BulkItemResponseInfo> ExitMaintenance(List<string> body);
 
         /// <summary>
         /// Puts the machines out of maintenance mode.
@@ -241,7 +242,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put out of maintenance mode.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> ExitMaintenanceWithHttpInfo (List<string> body);
+        ApiResponse<List<BulkItemResponseInfo>> ExitMaintenanceWithHttpInfo(List<string> body);
         /// <summary>
         /// Gets application icon.
         /// </summary>
@@ -251,7 +252,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApplicationIconInfo</returns>
-        ApplicationIconInfo GetApplicationIcon (string id);
+        ApplicationIconInfo GetApplicationIcon(string id);
 
         /// <summary>
         /// Gets application icon.
@@ -262,7 +263,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of ApplicationIconInfo</returns>
-        ApiResponse<ApplicationIconInfo> GetApplicationIconWithHttpInfo (string id);
+        ApiResponse<ApplicationIconInfo> GetApplicationIconWithHttpInfo(string id);
         /// <summary>
         /// Gets application pool.
         /// </summary>
@@ -272,7 +273,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApplicationPoolInfo</returns>
-        ApplicationPoolInfo GetApplicationPool (string id);
+        ApplicationPoolInfo GetApplicationPool(string id);
 
         /// <summary>
         /// Gets application pool.
@@ -283,7 +284,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of ApplicationPoolInfo</returns>
-        ApiResponse<ApplicationPoolInfo> GetApplicationPoolWithHttpInfo (string id);
+        ApiResponse<ApplicationPoolInfo> GetApplicationPoolWithHttpInfo(string id);
         /// <summary>
         /// Gets the Desktop Pool information.
         /// </summary>
@@ -293,7 +294,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>DesktopPoolInfo</returns>
-        DesktopPoolInfo GetDesktopPool (string id);
+        DesktopPoolInfo GetDesktopPool(string id);
 
         /// <summary>
         /// Gets the Desktop Pool information.
@@ -304,7 +305,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of DesktopPoolInfo</returns>
-        ApiResponse<DesktopPoolInfo> GetDesktopPoolWithHttpInfo (string id);
+        ApiResponse<DesktopPoolInfo> GetDesktopPoolWithHttpInfo(string id);
         /// <summary>
         /// Gets the desktop pool information.
         /// </summary>
@@ -314,7 +315,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>DesktopPoolInfoV2</returns>
-        DesktopPoolInfoV2 GetDesktopPoolV2 (string id);
+        DesktopPoolInfoV2 GetDesktopPoolV2(string id);
 
         /// <summary>
         /// Gets the desktop pool information.
@@ -325,7 +326,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of DesktopPoolInfoV2</returns>
-        ApiResponse<DesktopPoolInfoV2> GetDesktopPoolV2WithHttpInfo (string id);
+        ApiResponse<DesktopPoolInfoV2> GetDesktopPoolV2WithHttpInfo(string id);
         /// <summary>
         /// Gets the Farm information.
         /// </summary>
@@ -335,7 +336,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>FarmInfo</returns>
-        FarmInfo GetFarm (string id);
+        FarmInfo GetFarm(string id);
 
         /// <summary>
         /// Gets the Farm information.
@@ -346,7 +347,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of FarmInfo</returns>
-        ApiResponse<FarmInfo> GetFarmWithHttpInfo (string id);
+        ApiResponse<FarmInfo> GetFarmWithHttpInfo(string id);
         /// <summary>
         /// Gets the Machine information.
         /// </summary>
@@ -356,7 +357,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>MachineInfo</returns>
-        MachineInfo GetMachineUsingGET (string id);
+        MachineInfo GetMachineUsingGET(string id);
 
         /// <summary>
         /// Gets the Machine information.
@@ -367,7 +368,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of MachineInfo</returns>
-        ApiResponse<MachineInfo> GetMachineUsingGETWithHttpInfo (string id);
+        ApiResponse<MachineInfo> GetMachineUsingGETWithHttpInfo(string id);
         /// <summary>
         /// Gets the Session information.
         /// </summary>
@@ -377,7 +378,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>SessionInfo</returns>
-        SessionInfo GetSessionInfo (string id);
+        SessionInfo GetSessionInfo(string id);
 
         /// <summary>
         /// Gets the Session information.
@@ -388,7 +389,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of SessionInfo</returns>
-        ApiResponse<SessionInfo> GetSessionInfoWithHttpInfo (string id);
+        ApiResponse<SessionInfo> GetSessionInfoWithHttpInfo(string id);
         /// <summary>
         /// Lists the application icons for the given application pool.
         /// </summary>
@@ -398,7 +399,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="applicationPoolId">Application Pool ID</param>
         /// <returns>List&lt;ApplicationIconInfo&gt;</returns>
-        List<ApplicationIconInfo> ListApplicationIcons (string applicationPoolId);
+        List<ApplicationIconInfo> ListApplicationIcons(string applicationPoolId);
 
         /// <summary>
         /// Lists the application icons for the given application pool.
@@ -409,7 +410,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="applicationPoolId">Application Pool ID</param>
         /// <returns>ApiResponse of List&lt;ApplicationIconInfo&gt;</returns>
-        ApiResponse<List<ApplicationIconInfo>> ListApplicationIconsWithHttpInfo (string applicationPoolId);
+        ApiResponse<List<ApplicationIconInfo>> ListApplicationIconsWithHttpInfo(string applicationPoolId);
         /// <summary>
         /// Lists the application pools in the environment.
         /// </summary>
@@ -418,7 +419,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;ApplicationPoolInfo&gt;</returns>
-        List<ApplicationPoolInfo> ListApplicationPools ();
+        List<ApplicationPoolInfo> ListApplicationPools(CustomModel.Pagination Pagination = null, string filter = null);
 
         /// <summary>
         /// Lists the application pools in the environment.
@@ -428,7 +429,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;ApplicationPoolInfo&gt;</returns>
-        ApiResponse<List<ApplicationPoolInfo>> ListApplicationPoolsWithHttpInfo ();
+        ApiResponse<List<ApplicationPoolInfo>> ListApplicationPoolsWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null);
         /// <summary>
         /// Lists the Desktop Pools in the environment.
         /// </summary>
@@ -437,7 +438,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;DesktopPoolInfo&gt;</returns>
-        List<DesktopPoolInfo> ListDesktopPools ();
+        List<DesktopPoolInfo> ListDesktopPools();
 
         /// <summary>
         /// Lists the Desktop Pools in the environment.
@@ -447,7 +448,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;DesktopPoolInfo&gt;</returns>
-        ApiResponse<List<DesktopPoolInfo>> ListDesktopPoolsWithHttpInfo ();
+        ApiResponse<List<DesktopPoolInfo>> ListDesktopPoolsWithHttpInfo();
         /// <summary>
         /// Lists the desktop pools in the environment.
         /// </summary>
@@ -456,7 +457,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;DesktopPoolInfoV2&gt;</returns>
-        List<DesktopPoolInfoV2> ListDesktopPoolsV2 ();
+        List<DesktopPoolInfoV2> ListDesktopPoolsV2(CustomModel.Pagination Pagination = null);
 
         /// <summary>
         /// Lists the desktop pools in the environment.
@@ -466,7 +467,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;DesktopPoolInfoV2&gt;</returns>
-        ApiResponse<List<DesktopPoolInfoV2>> ListDesktopPoolsV2WithHttpInfo ();
+        ApiResponse<List<DesktopPoolInfoV2>> ListDesktopPoolsV2WithHttpInfo(CustomModel.Pagination Pagination = null);
         /// <summary>
         /// Lists the Farms in the environment.
         /// </summary>
@@ -475,7 +476,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;FarmInfo&gt;</returns>
-        List<FarmInfo> ListFarms ();
+        List<FarmInfo> ListFarms();
 
         /// <summary>
         /// Lists the Farms in the environment.
@@ -485,7 +486,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;FarmInfo&gt;</returns>
-        ApiResponse<List<FarmInfo>> ListFarmsWithHttpInfo ();
+        ApiResponse<List<FarmInfo>> ListFarmsWithHttpInfo();
         /// <summary>
         /// Lists the installed applications on the given desktop pool.
         /// </summary>
@@ -495,7 +496,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>List&lt;InstalledApplicationInfo&gt;</returns>
-        List<InstalledApplicationInfo> ListInstalledApplications (string id);
+        List<InstalledApplicationInfo> ListInstalledApplications(string id);
 
         /// <summary>
         /// Lists the installed applications on the given desktop pool.
@@ -506,7 +507,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of List&lt;InstalledApplicationInfo&gt;</returns>
-        ApiResponse<List<InstalledApplicationInfo>> ListInstalledApplicationsWithHttpInfo (string id);
+        ApiResponse<List<InstalledApplicationInfo>> ListInstalledApplicationsWithHttpInfo(string id);
         /// <summary>
         /// Lists the installed applications on the given farm.
         /// </summary>
@@ -516,7 +517,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>List&lt;InstalledApplicationInfo&gt;</returns>
-        List<InstalledApplicationInfo> ListInstalledApplications1 (string id);
+        List<InstalledApplicationInfo> ListInstalledApplications1(string id);
 
         /// <summary>
         /// Lists the installed applications on the given farm.
@@ -527,7 +528,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of List&lt;InstalledApplicationInfo&gt;</returns>
-        ApiResponse<List<InstalledApplicationInfo>> ListInstalledApplications1WithHttpInfo (string id);
+        ApiResponse<List<InstalledApplicationInfo>> ListInstalledApplications1WithHttpInfo(string id);
         /// <summary>
         /// Lists the Machines in the environment.
         /// </summary>
@@ -536,7 +537,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;MachineInfo&gt;</returns>
-        List<MachineInfo> ListMachinesUsingGET ();
+        List<MachineInfo> ListMachinesUsingGET(CustomModel.Pagination Pagination = null, string filter = null);
 
         /// <summary>
         /// Lists the Machines in the environment.
@@ -546,7 +547,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;MachineInfo&gt;</returns>
-        ApiResponse<List<MachineInfo>> ListMachinesUsingGETWithHttpInfo ();
+        ApiResponse<List<MachineInfo>> ListMachinesUsingGETWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null);
         /// <summary>
         /// Lists the Session information in the environment.
         /// </summary>
@@ -555,7 +556,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;SessionInfo&gt;</returns>
-        List<SessionInfo> ListSessionInfo ();
+        List<SessionInfo> ListSessionInfo(CustomModel.Pagination Pagination = null);
 
         /// <summary>
         /// Lists the Session information in the environment.
@@ -565,7 +566,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;SessionInfo&gt;</returns>
-        ApiResponse<List<SessionInfo>> ListSessionInfoWithHttpInfo ();
+        ApiResponse<List<SessionInfo>> ListSessionInfoWithHttpInfo(CustomModel.Pagination Pagination = null);
         /// <summary>
         /// Logs off user sessions, if they are not locked.
         /// </summary>
@@ -576,7 +577,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of session ids to be logged off.</param>
         /// <param name="forced">Indicates to Log off session forcibly.  If passed as \&quot;true\&quot;, then sessions are logoff forcibly, even if they are locked.  If passed as \&quot;false\&quot; or not passed at all, then sessions will be normally logged off, if they are not locked. (optional, default to false)</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> LogOffSessions (List<string> body, bool? forced = null);
+        List<BulkItemResponseInfo> LogOffSessions(List<string> body, bool? forced = null);
 
         /// <summary>
         /// Logs off user sessions, if they are not locked.
@@ -588,7 +589,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of session ids to be logged off.</param>
         /// <param name="forced">Indicates to Log off session forcibly.  If passed as \&quot;true\&quot;, then sessions are logoff forcibly, even if they are locked.  If passed as \&quot;false\&quot; or not passed at all, then sessions will be normally logged off, if they are not locked. (optional, default to false)</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> LogOffSessionsWithHttpInfo (List<string> body, bool? forced = null);
+        ApiResponse<List<BulkItemResponseInfo>> LogOffSessionsWithHttpInfo(List<string> body, bool? forced = null);
         /// <summary>
         /// Rebuilds the specified machines.
         /// </summary>
@@ -598,7 +599,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be rebuilt.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> RebuildMachines (List<string> body);
+        List<BulkItemResponseInfo> RebuildMachines(List<string> body);
 
         /// <summary>
         /// Rebuilds the specified machines.
@@ -609,7 +610,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be rebuilt.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> RebuildMachinesWithHttpInfo (List<string> body);
+        ApiResponse<List<BulkItemResponseInfo>> RebuildMachinesWithHttpInfo(List<string> body);
         /// <summary>
         /// Recovers the specified machines.
         /// </summary>
@@ -619,7 +620,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be recovered.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> RecoverMachines (List<string> body);
+        List<BulkItemResponseInfo> RecoverMachines(List<string> body);
 
         /// <summary>
         /// Recovers the specified machines.
@@ -630,7 +631,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be recovered.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> RecoverMachinesWithHttpInfo (List<string> body);
+        ApiResponse<List<BulkItemResponseInfo>> RecoverMachinesWithHttpInfo(List<string> body);
         /// <summary>
         /// Removes machines from the given manual desktop pool.
         /// </summary>
@@ -641,7 +642,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be removed from the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> RemoveMachines (List<string> body, string id);
+        List<BulkItemResponseInfo> RemoveMachines(List<string> body, string id);
 
         /// <summary>
         /// Removes machines from the given manual desktop pool.
@@ -653,7 +654,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be removed from the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> RemoveMachinesWithHttpInfo (List<string> body, string id);
+        ApiResponse<List<BulkItemResponseInfo>> RemoveMachinesWithHttpInfo(List<string> body, string id);
         /// <summary>
         /// Resets the specified machines.
         /// </summary>
@@ -663,7 +664,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be reset.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> ResetMachines (List<string> body);
+        List<BulkItemResponseInfo> ResetMachines(List<string> body);
 
         /// <summary>
         /// Resets the specified machines.
@@ -674,7 +675,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be reset.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> ResetMachinesWithHttpInfo (List<string> body);
+        ApiResponse<List<BulkItemResponseInfo>> ResetMachinesWithHttpInfo(List<string> body);
         /// <summary>
         /// Resets machine of user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
         /// </summary>
@@ -684,7 +685,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be reset.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> ResetSessions (List<string> body);
+        List<BulkItemResponseInfo> ResetSessions(List<string> body);
 
         /// <summary>
         /// Resets machine of user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
@@ -695,7 +696,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be reset.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> ResetSessionsWithHttpInfo (List<string> body);
+        ApiResponse<List<BulkItemResponseInfo>> ResetSessionsWithHttpInfo(List<string> body);
         /// <summary>
         /// Restarts the specified machines.
         /// </summary>
@@ -705,7 +706,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be restarted.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> RestartMachines (List<string> body);
+        List<BulkItemResponseInfo> RestartMachines(List<string> body);
 
         /// <summary>
         /// Restarts the specified machines.
@@ -716,7 +717,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be restarted.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> RestartMachinesWithHttpInfo (List<string> body);
+        ApiResponse<List<BulkItemResponseInfo>> RestartMachinesWithHttpInfo(List<string> body);
         /// <summary>
         /// Restarts machine of user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
         /// </summary>
@@ -726,7 +727,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be restarted.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> RestartSessions (List<string> body);
+        List<BulkItemResponseInfo> RestartSessions(List<string> body);
 
         /// <summary>
         /// Restarts machine of user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
@@ -737,7 +738,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be restarted.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> RestartSessionsWithHttpInfo (List<string> body);
+        ApiResponse<List<BulkItemResponseInfo>> RestartSessionsWithHttpInfo(List<string> body);
         /// <summary>
         /// Sends the message to user sessions
         /// </summary>
@@ -747,7 +748,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Message information object to be sent to sessions.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> SendMessageToSessions (SessionSendMessageSpec body);
+        List<BulkItemResponseInfo> SendMessageToSessions(SessionSendMessageSpec body);
 
         /// <summary>
         /// Sends the message to user sessions
@@ -758,7 +759,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Message information object to be sent to sessions.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> SendMessageToSessionsWithHttpInfo (SessionSendMessageSpec body);
+        ApiResponse<List<BulkItemResponseInfo>> SendMessageToSessionsWithHttpInfo(SessionSendMessageSpec body);
         /// <summary>
         /// Un-assigns the specified users from the machine.
         /// </summary>
@@ -769,7 +770,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be un-assigned from the machine.</param>
         /// <param name="id">id</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        List<BulkItemResponseInfo> UnassignUsers (List<string> body, string id);
+        List<BulkItemResponseInfo> UnassignUsers(List<string> body, string id);
 
         /// <summary>
         /// Un-assigns the specified users from the machine.
@@ -781,7 +782,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be un-assigned from the machine.</param>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        ApiResponse<List<BulkItemResponseInfo>> UnassignUsersWithHttpInfo (List<string> body, string id);
+        ApiResponse<List<BulkItemResponseInfo>> UnassignUsersWithHttpInfo(List<string> body, string id);
         /// <summary>
         /// Updates application pool.
         /// </summary>
@@ -792,7 +793,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">Application pool object to be updated.</param>
         /// <param name="id">id</param>
         /// <returns></returns>
-        void UpdateApplicationPool (ApplicationPoolUpdateSpec body, string id);
+        void UpdateApplicationPool(ApplicationPoolUpdateSpec body, string id);
 
         /// <summary>
         /// Updates application pool.
@@ -804,7 +805,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">Application pool object to be updated.</param>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateApplicationPoolWithHttpInfo (ApplicationPoolUpdateSpec body, string id);
+        ApiResponse<Object> UpdateApplicationPoolWithHttpInfo(ApplicationPoolUpdateSpec body, string id);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -817,7 +818,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> AddMachinesAsync (List<string> body, string id);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> AddMachinesAsync(List<string> body, string id);
 
         /// <summary>
         /// Adds machines to the given manual desktop pool.
@@ -829,7 +830,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> AddMachinesAsyncWithHttpInfo (List<string> body, string id);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> AddMachinesAsyncWithHttpInfo(List<string> body, string id);
         /// <summary>
         /// Adds the named machines to the given desktop pool.
         /// </summary>
@@ -840,7 +841,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of MachineSpecifiedName representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> AddMachinesByNameAsync (List<MachineSpecifiedName> body, string id);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> AddMachinesByNameAsync(List<MachineSpecifiedName> body, string id);
 
         /// <summary>
         /// Adds the named machines to the given desktop pool.
@@ -852,7 +853,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of MachineSpecifiedName representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> AddMachinesByNameAsyncWithHttpInfo (List<MachineSpecifiedName> body, string id);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> AddMachinesByNameAsyncWithHttpInfo(List<MachineSpecifiedName> body, string id);
         /// <summary>
         /// Assigns the specified users to the machine.
         /// </summary>
@@ -863,7 +864,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be assigned to the machine.</param>
         /// <param name="id">id</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> AssignUsersAsync (List<string> body, string id);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> AssignUsersAsync(List<string> body, string id);
 
         /// <summary>
         /// Assigns the specified users to the machine.
@@ -875,7 +876,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be assigned to the machine.</param>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> AssignUsersAsyncWithHttpInfo (List<string> body, string id);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> AssignUsersAsyncWithHttpInfo(List<string> body, string id);
         /// <summary>
         /// Creates an application pool.
         /// </summary>
@@ -885,7 +886,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Application pool object to be created.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateApplicationPoolAsync (ApplicationPoolCreateSpec body);
+        System.Threading.Tasks.Task CreateApplicationPoolAsync(ApplicationPoolCreateSpec body);
 
         /// <summary>
         /// Creates an application pool.
@@ -896,7 +897,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Application pool object to be created.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateApplicationPoolAsyncWithHttpInfo (ApplicationPoolCreateSpec body);
+        System.Threading.Tasks.Task<ApiResponse<Object>> CreateApplicationPoolAsyncWithHttpInfo(ApplicationPoolCreateSpec body);
         /// <summary>
         /// Deletes application pool.
         /// </summary>
@@ -906,7 +907,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteApplicationPoolAsync (string id);
+        System.Threading.Tasks.Task DeleteApplicationPoolAsync(string id);
 
         /// <summary>
         /// Deletes application pool.
@@ -917,7 +918,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteApplicationPoolAsyncWithHttpInfo (string id);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteApplicationPoolAsyncWithHttpInfo(string id);
         /// <summary>
         /// Deletes the machine.
         /// </summary>
@@ -928,7 +929,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">The specification applicable to deleting the machine.</param>
         /// <param name="id">id</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteMachineAsync (MachineDeleteData body, string id);
+        System.Threading.Tasks.Task DeleteMachineAsync(MachineDeleteData body, string id);
 
         /// <summary>
         /// Deletes the machine.
@@ -940,7 +941,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">The specification applicable to deleting the machine.</param>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteMachineAsyncWithHttpInfo (MachineDeleteData body, string id);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteMachineAsyncWithHttpInfo(MachineDeleteData body, string id);
         /// <summary>
         /// Deletes the specified machines.
         /// </summary>
@@ -950,7 +951,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The machines and specification for deletion.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> DeleteMachinesAsync (MachineDeleteSpec body);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> DeleteMachinesAsync(MachineDeleteSpec body);
 
         /// <summary>
         /// Deletes the specified machines.
@@ -961,7 +962,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The machines and specification for deletion.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> DeleteMachinesAsyncWithHttpInfo (MachineDeleteSpec body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> DeleteMachinesAsyncWithHttpInfo(MachineDeleteSpec body);
         /// <summary>
         /// Disconnects user sessions
         /// </summary>
@@ -971,7 +972,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be disconnected.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> DisconnectSessionsAsync (List<string> body);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> DisconnectSessionsAsync(List<string> body);
 
         /// <summary>
         /// Disconnects user sessions
@@ -982,7 +983,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be disconnected.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> DisconnectSessionsAsyncWithHttpInfo (List<string> body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> DisconnectSessionsAsyncWithHttpInfo(List<string> body);
         /// <summary>
         /// Puts the machines into maintenance mode.
         /// </summary>
@@ -992,7 +993,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put into maintenance mode.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> EnterMaintenanceAsync (List<string> body);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> EnterMaintenanceAsync(List<string> body);
 
         /// <summary>
         /// Puts the machines into maintenance mode.
@@ -1003,7 +1004,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put into maintenance mode.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> EnterMaintenanceAsyncWithHttpInfo (List<string> body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> EnterMaintenanceAsyncWithHttpInfo(List<string> body);
         /// <summary>
         /// Puts the machines out of maintenance mode.
         /// </summary>
@@ -1013,7 +1014,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put out of maintenance mode.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> ExitMaintenanceAsync (List<string> body);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> ExitMaintenanceAsync(List<string> body);
 
         /// <summary>
         /// Puts the machines out of maintenance mode.
@@ -1024,7 +1025,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put out of maintenance mode.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> ExitMaintenanceAsyncWithHttpInfo (List<string> body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> ExitMaintenanceAsyncWithHttpInfo(List<string> body);
         /// <summary>
         /// Gets application icon.
         /// </summary>
@@ -1034,7 +1035,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApplicationIconInfo</returns>
-        System.Threading.Tasks.Task<ApplicationIconInfo> GetApplicationIconAsync (string id);
+        System.Threading.Tasks.Task<ApplicationIconInfo> GetApplicationIconAsync(string id);
 
         /// <summary>
         /// Gets application icon.
@@ -1045,7 +1046,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (ApplicationIconInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApplicationIconInfo>> GetApplicationIconAsyncWithHttpInfo (string id);
+        System.Threading.Tasks.Task<ApiResponse<ApplicationIconInfo>> GetApplicationIconAsyncWithHttpInfo(string id);
         /// <summary>
         /// Gets application pool.
         /// </summary>
@@ -1055,7 +1056,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApplicationPoolInfo</returns>
-        System.Threading.Tasks.Task<ApplicationPoolInfo> GetApplicationPoolAsync (string id);
+        System.Threading.Tasks.Task<ApplicationPoolInfo> GetApplicationPoolAsync(string id);
 
         /// <summary>
         /// Gets application pool.
@@ -1066,7 +1067,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (ApplicationPoolInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApplicationPoolInfo>> GetApplicationPoolAsyncWithHttpInfo (string id);
+        System.Threading.Tasks.Task<ApiResponse<ApplicationPoolInfo>> GetApplicationPoolAsyncWithHttpInfo(string id);
         /// <summary>
         /// Gets the Desktop Pool information.
         /// </summary>
@@ -1076,7 +1077,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of DesktopPoolInfo</returns>
-        System.Threading.Tasks.Task<DesktopPoolInfo> GetDesktopPoolAsync (string id);
+        System.Threading.Tasks.Task<DesktopPoolInfo> GetDesktopPoolAsync(string id);
 
         /// <summary>
         /// Gets the Desktop Pool information.
@@ -1087,7 +1088,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (DesktopPoolInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DesktopPoolInfo>> GetDesktopPoolAsyncWithHttpInfo (string id);
+        System.Threading.Tasks.Task<ApiResponse<DesktopPoolInfo>> GetDesktopPoolAsyncWithHttpInfo(string id);
         /// <summary>
         /// Gets the desktop pool information.
         /// </summary>
@@ -1097,7 +1098,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of DesktopPoolInfoV2</returns>
-        System.Threading.Tasks.Task<DesktopPoolInfoV2> GetDesktopPoolV2Async (string id);
+        System.Threading.Tasks.Task<DesktopPoolInfoV2> GetDesktopPoolV2Async(string id);
 
         /// <summary>
         /// Gets the desktop pool information.
@@ -1108,7 +1109,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (DesktopPoolInfoV2)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DesktopPoolInfoV2>> GetDesktopPoolV2AsyncWithHttpInfo (string id);
+        System.Threading.Tasks.Task<ApiResponse<DesktopPoolInfoV2>> GetDesktopPoolV2AsyncWithHttpInfo(string id);
         /// <summary>
         /// Gets the Farm information.
         /// </summary>
@@ -1118,7 +1119,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of FarmInfo</returns>
-        System.Threading.Tasks.Task<FarmInfo> GetFarmAsync (string id);
+        System.Threading.Tasks.Task<FarmInfo> GetFarmAsync(string id);
 
         /// <summary>
         /// Gets the Farm information.
@@ -1129,7 +1130,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (FarmInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FarmInfo>> GetFarmAsyncWithHttpInfo (string id);
+        System.Threading.Tasks.Task<ApiResponse<FarmInfo>> GetFarmAsyncWithHttpInfo(string id);
         /// <summary>
         /// Gets the Machine information.
         /// </summary>
@@ -1139,7 +1140,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of MachineInfo</returns>
-        System.Threading.Tasks.Task<MachineInfo> GetMachineUsingGETAsync (string id);
+        System.Threading.Tasks.Task<MachineInfo> GetMachineUsingGETAsync(string id);
 
         /// <summary>
         /// Gets the Machine information.
@@ -1150,7 +1151,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (MachineInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<MachineInfo>> GetMachineUsingGETAsyncWithHttpInfo (string id);
+        System.Threading.Tasks.Task<ApiResponse<MachineInfo>> GetMachineUsingGETAsyncWithHttpInfo(string id);
         /// <summary>
         /// Gets the Session information.
         /// </summary>
@@ -1160,7 +1161,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of SessionInfo</returns>
-        System.Threading.Tasks.Task<SessionInfo> GetSessionInfoAsync (string id);
+        System.Threading.Tasks.Task<SessionInfo> GetSessionInfoAsync(string id);
 
         /// <summary>
         /// Gets the Session information.
@@ -1171,7 +1172,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (SessionInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SessionInfo>> GetSessionInfoAsyncWithHttpInfo (string id);
+        System.Threading.Tasks.Task<ApiResponse<SessionInfo>> GetSessionInfoAsyncWithHttpInfo(string id);
         /// <summary>
         /// Lists the application icons for the given application pool.
         /// </summary>
@@ -1181,7 +1182,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="applicationPoolId">Application Pool ID</param>
         /// <returns>Task of List&lt;ApplicationIconInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<ApplicationIconInfo>> ListApplicationIconsAsync (string applicationPoolId);
+        System.Threading.Tasks.Task<List<ApplicationIconInfo>> ListApplicationIconsAsync(string applicationPoolId);
 
         /// <summary>
         /// Lists the application icons for the given application pool.
@@ -1192,7 +1193,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="applicationPoolId">Application Pool ID</param>
         /// <returns>Task of ApiResponse (List&lt;ApplicationIconInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ApplicationIconInfo>>> ListApplicationIconsAsyncWithHttpInfo (string applicationPoolId);
+        System.Threading.Tasks.Task<ApiResponse<List<ApplicationIconInfo>>> ListApplicationIconsAsyncWithHttpInfo(string applicationPoolId);
         /// <summary>
         /// Lists the application pools in the environment.
         /// </summary>
@@ -1201,7 +1202,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;ApplicationPoolInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<ApplicationPoolInfo>> ListApplicationPoolsAsync ();
+        System.Threading.Tasks.Task<List<ApplicationPoolInfo>> ListApplicationPoolsAsync(CustomModel.Pagination Pagination = null, string filter = null);
 
         /// <summary>
         /// Lists the application pools in the environment.
@@ -1211,7 +1212,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;ApplicationPoolInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ApplicationPoolInfo>>> ListApplicationPoolsAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<ApplicationPoolInfo>>> ListApplicationPoolsAsyncWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null);
         /// <summary>
         /// Lists the Desktop Pools in the environment.
         /// </summary>
@@ -1220,7 +1221,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;DesktopPoolInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<DesktopPoolInfo>> ListDesktopPoolsAsync ();
+        System.Threading.Tasks.Task<List<DesktopPoolInfo>> ListDesktopPoolsAsync();
 
         /// <summary>
         /// Lists the Desktop Pools in the environment.
@@ -1230,7 +1231,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;DesktopPoolInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<DesktopPoolInfo>>> ListDesktopPoolsAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<DesktopPoolInfo>>> ListDesktopPoolsAsyncWithHttpInfo();
         /// <summary>
         /// Lists the desktop pools in the environment.
         /// </summary>
@@ -1239,7 +1240,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;DesktopPoolInfoV2&gt;</returns>
-        System.Threading.Tasks.Task<List<DesktopPoolInfoV2>> ListDesktopPoolsV2Async ();
+        System.Threading.Tasks.Task<List<DesktopPoolInfoV2>> ListDesktopPoolsV2Async(CustomModel.Pagination Pagination = null);
 
         /// <summary>
         /// Lists the desktop pools in the environment.
@@ -1249,7 +1250,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;DesktopPoolInfoV2&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<DesktopPoolInfoV2>>> ListDesktopPoolsV2AsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<DesktopPoolInfoV2>>> ListDesktopPoolsV2AsyncWithHttpInfo(CustomModel.Pagination Pagination = null);
         /// <summary>
         /// Lists the Farms in the environment.
         /// </summary>
@@ -1258,7 +1259,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;FarmInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<FarmInfo>> ListFarmsAsync ();
+        System.Threading.Tasks.Task<List<FarmInfo>> ListFarmsAsync();
 
         /// <summary>
         /// Lists the Farms in the environment.
@@ -1268,7 +1269,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;FarmInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<FarmInfo>>> ListFarmsAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<FarmInfo>>> ListFarmsAsyncWithHttpInfo();
         /// <summary>
         /// Lists the installed applications on the given desktop pool.
         /// </summary>
@@ -1278,7 +1279,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of List&lt;InstalledApplicationInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<InstalledApplicationInfo>> ListInstalledApplicationsAsync (string id);
+        System.Threading.Tasks.Task<List<InstalledApplicationInfo>> ListInstalledApplicationsAsync(string id);
 
         /// <summary>
         /// Lists the installed applications on the given desktop pool.
@@ -1289,7 +1290,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (List&lt;InstalledApplicationInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<InstalledApplicationInfo>>> ListInstalledApplicationsAsyncWithHttpInfo (string id);
+        System.Threading.Tasks.Task<ApiResponse<List<InstalledApplicationInfo>>> ListInstalledApplicationsAsyncWithHttpInfo(string id);
         /// <summary>
         /// Lists the installed applications on the given farm.
         /// </summary>
@@ -1299,7 +1300,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of List&lt;InstalledApplicationInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<InstalledApplicationInfo>> ListInstalledApplications1Async (string id);
+        System.Threading.Tasks.Task<List<InstalledApplicationInfo>> ListInstalledApplications1Async(string id);
 
         /// <summary>
         /// Lists the installed applications on the given farm.
@@ -1310,7 +1311,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (List&lt;InstalledApplicationInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<InstalledApplicationInfo>>> ListInstalledApplications1AsyncWithHttpInfo (string id);
+        System.Threading.Tasks.Task<ApiResponse<List<InstalledApplicationInfo>>> ListInstalledApplications1AsyncWithHttpInfo(string id);
         /// <summary>
         /// Lists the Machines in the environment.
         /// </summary>
@@ -1319,7 +1320,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;MachineInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<MachineInfo>> ListMachinesUsingGETAsync ();
+        System.Threading.Tasks.Task<List<MachineInfo>> ListMachinesUsingGETAsync(CustomModel.Pagination Pagination = null, string filter = null);
 
         /// <summary>
         /// Lists the Machines in the environment.
@@ -1329,7 +1330,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;MachineInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<MachineInfo>>> ListMachinesUsingGETAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<MachineInfo>>> ListMachinesUsingGETAsyncWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null);
         /// <summary>
         /// Lists the Session information in the environment.
         /// </summary>
@@ -1338,7 +1339,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;SessionInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<SessionInfo>> ListSessionInfoAsync ();
+        System.Threading.Tasks.Task<List<SessionInfo>> ListSessionInfoAsync(CustomModel.Pagination Pagination = null);
 
         /// <summary>
         /// Lists the Session information in the environment.
@@ -1348,7 +1349,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;SessionInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<SessionInfo>>> ListSessionInfoAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<SessionInfo>>> ListSessionInfoAsyncWithHttpInfo(CustomModel.Pagination Pagination = null);
         /// <summary>
         /// Logs off user sessions, if they are not locked.
         /// </summary>
@@ -1359,7 +1360,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of session ids to be logged off.</param>
         /// <param name="forced">Indicates to Log off session forcibly.  If passed as \&quot;true\&quot;, then sessions are logoff forcibly, even if they are locked.  If passed as \&quot;false\&quot; or not passed at all, then sessions will be normally logged off, if they are not locked. (optional, default to false)</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> LogOffSessionsAsync (List<string> body, bool? forced = null);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> LogOffSessionsAsync(List<string> body, bool? forced = null);
 
         /// <summary>
         /// Logs off user sessions, if they are not locked.
@@ -1371,7 +1372,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of session ids to be logged off.</param>
         /// <param name="forced">Indicates to Log off session forcibly.  If passed as \&quot;true\&quot;, then sessions are logoff forcibly, even if they are locked.  If passed as \&quot;false\&quot; or not passed at all, then sessions will be normally logged off, if they are not locked. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> LogOffSessionsAsyncWithHttpInfo (List<string> body, bool? forced = null);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> LogOffSessionsAsyncWithHttpInfo(List<string> body, bool? forced = null);
         /// <summary>
         /// Rebuilds the specified machines.
         /// </summary>
@@ -1381,7 +1382,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be rebuilt.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RebuildMachinesAsync (List<string> body);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RebuildMachinesAsync(List<string> body);
 
         /// <summary>
         /// Rebuilds the specified machines.
@@ -1392,7 +1393,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be rebuilt.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RebuildMachinesAsyncWithHttpInfo (List<string> body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RebuildMachinesAsyncWithHttpInfo(List<string> body);
         /// <summary>
         /// Recovers the specified machines.
         /// </summary>
@@ -1402,7 +1403,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be recovered.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RecoverMachinesAsync (List<string> body);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RecoverMachinesAsync(List<string> body);
 
         /// <summary>
         /// Recovers the specified machines.
@@ -1413,7 +1414,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be recovered.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RecoverMachinesAsyncWithHttpInfo (List<string> body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RecoverMachinesAsyncWithHttpInfo(List<string> body);
         /// <summary>
         /// Removes machines from the given manual desktop pool.
         /// </summary>
@@ -1424,7 +1425,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be removed from the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RemoveMachinesAsync (List<string> body, string id);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RemoveMachinesAsync(List<string> body, string id);
 
         /// <summary>
         /// Removes machines from the given manual desktop pool.
@@ -1436,7 +1437,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be removed from the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RemoveMachinesAsyncWithHttpInfo (List<string> body, string id);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RemoveMachinesAsyncWithHttpInfo(List<string> body, string id);
         /// <summary>
         /// Resets the specified machines.
         /// </summary>
@@ -1446,7 +1447,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be reset.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> ResetMachinesAsync (List<string> body);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> ResetMachinesAsync(List<string> body);
 
         /// <summary>
         /// Resets the specified machines.
@@ -1457,7 +1458,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be reset.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> ResetMachinesAsyncWithHttpInfo (List<string> body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> ResetMachinesAsyncWithHttpInfo(List<string> body);
         /// <summary>
         /// Resets machine of user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
         /// </summary>
@@ -1467,7 +1468,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be reset.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> ResetSessionsAsync (List<string> body);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> ResetSessionsAsync(List<string> body);
 
         /// <summary>
         /// Resets machine of user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
@@ -1478,7 +1479,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be reset.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> ResetSessionsAsyncWithHttpInfo (List<string> body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> ResetSessionsAsyncWithHttpInfo(List<string> body);
         /// <summary>
         /// Restarts the specified machines.
         /// </summary>
@@ -1488,7 +1489,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be restarted.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RestartMachinesAsync (List<string> body);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RestartMachinesAsync(List<string> body);
 
         /// <summary>
         /// Restarts the specified machines.
@@ -1499,7 +1500,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be restarted.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RestartMachinesAsyncWithHttpInfo (List<string> body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RestartMachinesAsyncWithHttpInfo(List<string> body);
         /// <summary>
         /// Restarts machine of user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
         /// </summary>
@@ -1509,7 +1510,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be restarted.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RestartSessionsAsync (List<string> body);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RestartSessionsAsync(List<string> body);
 
         /// <summary>
         /// Restarts machine of user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
@@ -1520,7 +1521,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be restarted.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RestartSessionsAsyncWithHttpInfo (List<string> body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RestartSessionsAsyncWithHttpInfo(List<string> body);
         /// <summary>
         /// Sends the message to user sessions
         /// </summary>
@@ -1530,7 +1531,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Message information object to be sent to sessions.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> SendMessageToSessionsAsync (SessionSendMessageSpec body);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> SendMessageToSessionsAsync(SessionSendMessageSpec body);
 
         /// <summary>
         /// Sends the message to user sessions
@@ -1541,7 +1542,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Message information object to be sent to sessions.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> SendMessageToSessionsAsyncWithHttpInfo (SessionSendMessageSpec body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> SendMessageToSessionsAsyncWithHttpInfo(SessionSendMessageSpec body);
         /// <summary>
         /// Un-assigns the specified users from the machine.
         /// </summary>
@@ -1552,7 +1553,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be un-assigned from the machine.</param>
         /// <param name="id">id</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> UnassignUsersAsync (List<string> body, string id);
+        System.Threading.Tasks.Task<List<BulkItemResponseInfo>> UnassignUsersAsync(List<string> body, string id);
 
         /// <summary>
         /// Un-assigns the specified users from the machine.
@@ -1564,7 +1565,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be un-assigned from the machine.</param>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> UnassignUsersAsyncWithHttpInfo (List<string> body, string id);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> UnassignUsersAsyncWithHttpInfo(List<string> body, string id);
         /// <summary>
         /// Updates application pool.
         /// </summary>
@@ -1575,7 +1576,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">Application pool object to be updated.</param>
         /// <param name="id">id</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateApplicationPoolAsync (ApplicationPoolUpdateSpec body, string id);
+        System.Threading.Tasks.Task UpdateApplicationPoolAsync(ApplicationPoolUpdateSpec body, string id);
 
         /// <summary>
         /// Updates application pool.
@@ -1587,7 +1588,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">Application pool object to be updated.</param>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateApplicationPoolAsyncWithHttpInfo (ApplicationPoolUpdateSpec body, string id);
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateApplicationPoolAsyncWithHttpInfo(ApplicationPoolUpdateSpec body, string id);
         #endregion Asynchronous Operations
     }
 
@@ -1648,7 +1649,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public VMware.Horizon.RESTAPI.Client.Configuration Configuration {get; set;}
+        public VMware.Horizon.RESTAPI.Client.Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -1695,10 +1696,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> AddMachines (List<string> body, string id)
+        public List<BulkItemResponseInfo> AddMachines(List<string> body, string id)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = AddMachinesWithHttpInfo(body, id);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = AddMachinesWithHttpInfo(body, id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1708,7 +1709,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > AddMachinesWithHttpInfo (List<string> body, string id)
+        public ApiResponse<List<BulkItemResponseInfo>> AddMachinesWithHttpInfo(List<string> body, string id)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1756,11 +1757,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1770,7 +1771,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -1780,10 +1781,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> AddMachinesAsync (List<string> body, string id)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> AddMachinesAsync(List<string> body, string id)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await AddMachinesAsyncWithHttpInfo(body, id);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await AddMachinesAsyncWithHttpInfo(body, id);
+            return localVarResponse.Data;
 
         }
 
@@ -1794,7 +1795,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> AddMachinesAsyncWithHttpInfo (List<string> body, string id)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> AddMachinesAsyncWithHttpInfo(List<string> body, string id)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1842,11 +1843,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1856,7 +1857,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -1866,10 +1867,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of MachineSpecifiedName representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> AddMachinesByName (List<MachineSpecifiedName> body, string id)
+        public List<BulkItemResponseInfo> AddMachinesByName(List<MachineSpecifiedName> body, string id)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = AddMachinesByNameWithHttpInfo(body, id);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = AddMachinesByNameWithHttpInfo(body, id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1879,7 +1880,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of MachineSpecifiedName representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > AddMachinesByNameWithHttpInfo (List<MachineSpecifiedName> body, string id)
+        public ApiResponse<List<BulkItemResponseInfo>> AddMachinesByNameWithHttpInfo(List<MachineSpecifiedName> body, string id)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1927,11 +1928,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1941,7 +1942,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -1951,10 +1952,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of MachineSpecifiedName representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> AddMachinesByNameAsync (List<MachineSpecifiedName> body, string id)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> AddMachinesByNameAsync(List<MachineSpecifiedName> body, string id)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await AddMachinesByNameAsyncWithHttpInfo(body, id);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await AddMachinesByNameAsyncWithHttpInfo(body, id);
+            return localVarResponse.Data;
 
         }
 
@@ -1965,7 +1966,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of MachineSpecifiedName representing the machines to be added to the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> AddMachinesByNameAsyncWithHttpInfo (List<MachineSpecifiedName> body, string id)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> AddMachinesByNameAsyncWithHttpInfo(List<MachineSpecifiedName> body, string id)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2013,11 +2014,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2027,7 +2028,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -2037,10 +2038,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be assigned to the machine.</param>
         /// <param name="id">id</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> AssignUsers (List<string> body, string id)
+        public List<BulkItemResponseInfo> AssignUsers(List<string> body, string id)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = AssignUsersWithHttpInfo(body, id);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = AssignUsersWithHttpInfo(body, id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2050,7 +2051,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be assigned to the machine.</param>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > AssignUsersWithHttpInfo (List<string> body, string id)
+        public ApiResponse<List<BulkItemResponseInfo>> AssignUsersWithHttpInfo(List<string> body, string id)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2098,11 +2099,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2112,7 +2113,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -2122,10 +2123,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be assigned to the machine.</param>
         /// <param name="id">id</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> AssignUsersAsync (List<string> body, string id)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> AssignUsersAsync(List<string> body, string id)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await AssignUsersAsyncWithHttpInfo(body, id);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await AssignUsersAsyncWithHttpInfo(body, id);
+            return localVarResponse.Data;
 
         }
 
@@ -2136,7 +2137,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be assigned to the machine.</param>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> AssignUsersAsyncWithHttpInfo (List<string> body, string id)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> AssignUsersAsyncWithHttpInfo(List<string> body, string id)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2184,11 +2185,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2198,7 +2199,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -2207,9 +2208,9 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Application pool object to be created.</param>
         /// <returns></returns>
-        public void CreateApplicationPool (ApplicationPoolCreateSpec body)
+        public void CreateApplicationPool(ApplicationPoolCreateSpec body)
         {
-             CreateApplicationPoolWithHttpInfo(body);
+            CreateApplicationPoolWithHttpInfo(body);
         }
 
         /// <summary>
@@ -2218,7 +2219,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Application pool object to be created.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> CreateApplicationPoolWithHttpInfo (ApplicationPoolCreateSpec body)
+        public ApiResponse<Object> CreateApplicationPoolWithHttpInfo(ApplicationPoolCreateSpec body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2262,11 +2263,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2285,9 +2286,9 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Application pool object to be created.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateApplicationPoolAsync (ApplicationPoolCreateSpec body)
+        public async System.Threading.Tasks.Task CreateApplicationPoolAsync(ApplicationPoolCreateSpec body)
         {
-             await CreateApplicationPoolAsyncWithHttpInfo(body);
+            await CreateApplicationPoolAsyncWithHttpInfo(body);
 
         }
 
@@ -2297,7 +2298,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Application pool object to be created.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> CreateApplicationPoolAsyncWithHttpInfo (ApplicationPoolCreateSpec body)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> CreateApplicationPoolAsyncWithHttpInfo(ApplicationPoolCreateSpec body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2341,11 +2342,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2364,9 +2365,9 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns></returns>
-        public void DeleteApplicationPool (string id)
+        public void DeleteApplicationPool(string id)
         {
-             DeleteApplicationPoolWithHttpInfo(id);
+            DeleteApplicationPoolWithHttpInfo(id);
         }
 
         /// <summary>
@@ -2375,7 +2376,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteApplicationPoolWithHttpInfo (string id)
+        public ApiResponse<Object> DeleteApplicationPoolWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2411,11 +2412,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2434,9 +2435,9 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteApplicationPoolAsync (string id)
+        public async System.Threading.Tasks.Task DeleteApplicationPoolAsync(string id)
         {
-             await DeleteApplicationPoolAsyncWithHttpInfo(id);
+            await DeleteApplicationPoolAsyncWithHttpInfo(id);
 
         }
 
@@ -2446,7 +2447,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteApplicationPoolAsyncWithHttpInfo (string id)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteApplicationPoolAsyncWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2482,11 +2483,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2506,9 +2507,9 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">The specification applicable to deleting the machine.</param>
         /// <param name="id">id</param>
         /// <returns></returns>
-        public void DeleteMachine (MachineDeleteData body, string id)
+        public void DeleteMachine(MachineDeleteData body, string id)
         {
-             DeleteMachineWithHttpInfo(body, id);
+            DeleteMachineWithHttpInfo(body, id);
         }
 
         /// <summary>
@@ -2518,7 +2519,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">The specification applicable to deleting the machine.</param>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteMachineWithHttpInfo (MachineDeleteData body, string id)
+        public ApiResponse<Object> DeleteMachineWithHttpInfo(MachineDeleteData body, string id)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2565,11 +2566,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2589,9 +2590,9 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">The specification applicable to deleting the machine.</param>
         /// <param name="id">id</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteMachineAsync (MachineDeleteData body, string id)
+        public async System.Threading.Tasks.Task DeleteMachineAsync(MachineDeleteData body, string id)
         {
-             await DeleteMachineAsyncWithHttpInfo(body, id);
+            await DeleteMachineAsyncWithHttpInfo(body, id);
 
         }
 
@@ -2602,7 +2603,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">The specification applicable to deleting the machine.</param>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteMachineAsyncWithHttpInfo (MachineDeleteData body, string id)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteMachineAsyncWithHttpInfo(MachineDeleteData body, string id)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2649,11 +2650,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2672,10 +2673,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The machines and specification for deletion.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> DeleteMachines (MachineDeleteSpec body)
+        public List<BulkItemResponseInfo> DeleteMachines(MachineDeleteSpec body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = DeleteMachinesWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = DeleteMachinesWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2684,7 +2685,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The machines and specification for deletion.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > DeleteMachinesWithHttpInfo (MachineDeleteSpec body)
+        public ApiResponse<List<BulkItemResponseInfo>> DeleteMachinesWithHttpInfo(MachineDeleteSpec body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2727,11 +2728,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2741,7 +2742,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -2750,10 +2751,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The machines and specification for deletion.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> DeleteMachinesAsync (MachineDeleteSpec body)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> DeleteMachinesAsync(MachineDeleteSpec body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await DeleteMachinesAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await DeleteMachinesAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -2763,7 +2764,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">The machines and specification for deletion.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> DeleteMachinesAsyncWithHttpInfo (MachineDeleteSpec body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> DeleteMachinesAsyncWithHttpInfo(MachineDeleteSpec body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2806,11 +2807,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2820,7 +2821,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -2829,10 +2830,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be disconnected.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> DisconnectSessions (List<string> body)
+        public List<BulkItemResponseInfo> DisconnectSessions(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = DisconnectSessionsWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = DisconnectSessionsWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2841,7 +2842,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be disconnected.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > DisconnectSessionsWithHttpInfo (List<string> body)
+        public ApiResponse<List<BulkItemResponseInfo>> DisconnectSessionsWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2885,11 +2886,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2899,7 +2900,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -2908,10 +2909,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be disconnected.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> DisconnectSessionsAsync (List<string> body)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> DisconnectSessionsAsync(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await DisconnectSessionsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await DisconnectSessionsAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -2921,7 +2922,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be disconnected.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> DisconnectSessionsAsyncWithHttpInfo (List<string> body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> DisconnectSessionsAsyncWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2965,11 +2966,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -2979,7 +2980,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -2988,10 +2989,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put into maintenance mode.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> EnterMaintenance (List<string> body)
+        public List<BulkItemResponseInfo> EnterMaintenance(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = EnterMaintenanceWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = EnterMaintenanceWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -3000,7 +3001,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put into maintenance mode.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > EnterMaintenanceWithHttpInfo (List<string> body)
+        public ApiResponse<List<BulkItemResponseInfo>> EnterMaintenanceWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -3044,11 +3045,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3058,7 +3059,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -3067,10 +3068,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put into maintenance mode.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> EnterMaintenanceAsync (List<string> body)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> EnterMaintenanceAsync(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await EnterMaintenanceAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await EnterMaintenanceAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -3080,7 +3081,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put into maintenance mode.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> EnterMaintenanceAsyncWithHttpInfo (List<string> body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> EnterMaintenanceAsyncWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -3124,11 +3125,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3138,7 +3139,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -3147,10 +3148,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put out of maintenance mode.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> ExitMaintenance (List<string> body)
+        public List<BulkItemResponseInfo> ExitMaintenance(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = ExitMaintenanceWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = ExitMaintenanceWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -3159,7 +3160,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put out of maintenance mode.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > ExitMaintenanceWithHttpInfo (List<string> body)
+        public ApiResponse<List<BulkItemResponseInfo>> ExitMaintenanceWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -3203,11 +3204,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3217,7 +3218,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -3226,10 +3227,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put out of maintenance mode.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> ExitMaintenanceAsync (List<string> body)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> ExitMaintenanceAsync(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await ExitMaintenanceAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await ExitMaintenanceAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -3239,7 +3240,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be put out of maintenance mode.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> ExitMaintenanceAsyncWithHttpInfo (List<string> body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> ExitMaintenanceAsyncWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -3283,11 +3284,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3297,7 +3298,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -3306,10 +3307,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApplicationIconInfo</returns>
-        public ApplicationIconInfo GetApplicationIcon (string id)
+        public ApplicationIconInfo GetApplicationIcon(string id)
         {
-             ApiResponse<ApplicationIconInfo> localVarResponse = GetApplicationIconWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<ApplicationIconInfo> localVarResponse = GetApplicationIconWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -3318,7 +3319,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of ApplicationIconInfo</returns>
-        public ApiResponse< ApplicationIconInfo > GetApplicationIconWithHttpInfo (string id)
+        public ApiResponse<ApplicationIconInfo> GetApplicationIconWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3354,11 +3355,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3368,7 +3369,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<ApplicationIconInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ApplicationIconInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApplicationIconInfo)));
+                (ApplicationIconInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApplicationIconInfo)));
         }
 
         /// <summary>
@@ -3377,10 +3378,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApplicationIconInfo</returns>
-        public async System.Threading.Tasks.Task<ApplicationIconInfo> GetApplicationIconAsync (string id)
+        public async System.Threading.Tasks.Task<ApplicationIconInfo> GetApplicationIconAsync(string id)
         {
-             ApiResponse<ApplicationIconInfo> localVarResponse = await GetApplicationIconAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<ApplicationIconInfo> localVarResponse = await GetApplicationIconAsyncWithHttpInfo(id);
+            return localVarResponse.Data;
 
         }
 
@@ -3390,7 +3391,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (ApplicationIconInfo)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ApplicationIconInfo>> GetApplicationIconAsyncWithHttpInfo (string id)
+        public async System.Threading.Tasks.Task<ApiResponse<ApplicationIconInfo>> GetApplicationIconAsyncWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3426,11 +3427,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3440,7 +3441,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<ApplicationIconInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ApplicationIconInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApplicationIconInfo)));
+                (ApplicationIconInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApplicationIconInfo)));
         }
 
         /// <summary>
@@ -3449,10 +3450,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApplicationPoolInfo</returns>
-        public ApplicationPoolInfo GetApplicationPool (string id)
+        public ApplicationPoolInfo GetApplicationPool(string id)
         {
-             ApiResponse<ApplicationPoolInfo> localVarResponse = GetApplicationPoolWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<ApplicationPoolInfo> localVarResponse = GetApplicationPoolWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -3461,7 +3462,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of ApplicationPoolInfo</returns>
-        public ApiResponse< ApplicationPoolInfo > GetApplicationPoolWithHttpInfo (string id)
+        public ApiResponse<ApplicationPoolInfo> GetApplicationPoolWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3497,11 +3498,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3511,7 +3512,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<ApplicationPoolInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ApplicationPoolInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApplicationPoolInfo)));
+                (ApplicationPoolInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApplicationPoolInfo)));
         }
 
         /// <summary>
@@ -3520,10 +3521,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApplicationPoolInfo</returns>
-        public async System.Threading.Tasks.Task<ApplicationPoolInfo> GetApplicationPoolAsync (string id)
+        public async System.Threading.Tasks.Task<ApplicationPoolInfo> GetApplicationPoolAsync(string id)
         {
-             ApiResponse<ApplicationPoolInfo> localVarResponse = await GetApplicationPoolAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<ApplicationPoolInfo> localVarResponse = await GetApplicationPoolAsyncWithHttpInfo(id);
+            return localVarResponse.Data;
 
         }
 
@@ -3533,7 +3534,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (ApplicationPoolInfo)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ApplicationPoolInfo>> GetApplicationPoolAsyncWithHttpInfo (string id)
+        public async System.Threading.Tasks.Task<ApiResponse<ApplicationPoolInfo>> GetApplicationPoolAsyncWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3569,11 +3570,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3583,7 +3584,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<ApplicationPoolInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ApplicationPoolInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApplicationPoolInfo)));
+                (ApplicationPoolInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApplicationPoolInfo)));
         }
 
         /// <summary>
@@ -3592,10 +3593,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>DesktopPoolInfo</returns>
-        public DesktopPoolInfo GetDesktopPool (string id)
+        public DesktopPoolInfo GetDesktopPool(string id)
         {
-             ApiResponse<DesktopPoolInfo> localVarResponse = GetDesktopPoolWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<DesktopPoolInfo> localVarResponse = GetDesktopPoolWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -3604,7 +3605,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of DesktopPoolInfo</returns>
-        public ApiResponse< DesktopPoolInfo > GetDesktopPoolWithHttpInfo (string id)
+        public ApiResponse<DesktopPoolInfo> GetDesktopPoolWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3640,11 +3641,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3654,7 +3655,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<DesktopPoolInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (DesktopPoolInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DesktopPoolInfo)));
+                (DesktopPoolInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DesktopPoolInfo)));
         }
 
         /// <summary>
@@ -3663,10 +3664,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of DesktopPoolInfo</returns>
-        public async System.Threading.Tasks.Task<DesktopPoolInfo> GetDesktopPoolAsync (string id)
+        public async System.Threading.Tasks.Task<DesktopPoolInfo> GetDesktopPoolAsync(string id)
         {
-             ApiResponse<DesktopPoolInfo> localVarResponse = await GetDesktopPoolAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<DesktopPoolInfo> localVarResponse = await GetDesktopPoolAsyncWithHttpInfo(id);
+            return localVarResponse.Data;
 
         }
 
@@ -3676,7 +3677,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (DesktopPoolInfo)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DesktopPoolInfo>> GetDesktopPoolAsyncWithHttpInfo (string id)
+        public async System.Threading.Tasks.Task<ApiResponse<DesktopPoolInfo>> GetDesktopPoolAsyncWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3712,11 +3713,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3726,7 +3727,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<DesktopPoolInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (DesktopPoolInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DesktopPoolInfo)));
+                (DesktopPoolInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DesktopPoolInfo)));
         }
 
         /// <summary>
@@ -3735,10 +3736,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>DesktopPoolInfoV2</returns>
-        public DesktopPoolInfoV2 GetDesktopPoolV2 (string id)
+        public DesktopPoolInfoV2 GetDesktopPoolV2(string id)
         {
-             ApiResponse<DesktopPoolInfoV2> localVarResponse = GetDesktopPoolV2WithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<DesktopPoolInfoV2> localVarResponse = GetDesktopPoolV2WithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -3747,7 +3748,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of DesktopPoolInfoV2</returns>
-        public ApiResponse< DesktopPoolInfoV2 > GetDesktopPoolV2WithHttpInfo (string id)
+        public ApiResponse<DesktopPoolInfoV2> GetDesktopPoolV2WithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3783,11 +3784,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3797,7 +3798,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<DesktopPoolInfoV2>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (DesktopPoolInfoV2) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DesktopPoolInfoV2)));
+                (DesktopPoolInfoV2)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DesktopPoolInfoV2)));
         }
 
         /// <summary>
@@ -3806,10 +3807,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of DesktopPoolInfoV2</returns>
-        public async System.Threading.Tasks.Task<DesktopPoolInfoV2> GetDesktopPoolV2Async (string id)
+        public async System.Threading.Tasks.Task<DesktopPoolInfoV2> GetDesktopPoolV2Async(string id)
         {
-             ApiResponse<DesktopPoolInfoV2> localVarResponse = await GetDesktopPoolV2AsyncWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<DesktopPoolInfoV2> localVarResponse = await GetDesktopPoolV2AsyncWithHttpInfo(id);
+            return localVarResponse.Data;
 
         }
 
@@ -3819,7 +3820,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (DesktopPoolInfoV2)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DesktopPoolInfoV2>> GetDesktopPoolV2AsyncWithHttpInfo (string id)
+        public async System.Threading.Tasks.Task<ApiResponse<DesktopPoolInfoV2>> GetDesktopPoolV2AsyncWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3855,11 +3856,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3869,7 +3870,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<DesktopPoolInfoV2>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (DesktopPoolInfoV2) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DesktopPoolInfoV2)));
+                (DesktopPoolInfoV2)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DesktopPoolInfoV2)));
         }
 
         /// <summary>
@@ -3878,10 +3879,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>FarmInfo</returns>
-        public FarmInfo GetFarm (string id)
+        public FarmInfo GetFarm(string id)
         {
-             ApiResponse<FarmInfo> localVarResponse = GetFarmWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<FarmInfo> localVarResponse = GetFarmWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -3890,7 +3891,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of FarmInfo</returns>
-        public ApiResponse< FarmInfo > GetFarmWithHttpInfo (string id)
+        public ApiResponse<FarmInfo> GetFarmWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3926,11 +3927,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -3940,7 +3941,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<FarmInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (FarmInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FarmInfo)));
+                (FarmInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FarmInfo)));
         }
 
         /// <summary>
@@ -3949,10 +3950,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of FarmInfo</returns>
-        public async System.Threading.Tasks.Task<FarmInfo> GetFarmAsync (string id)
+        public async System.Threading.Tasks.Task<FarmInfo> GetFarmAsync(string id)
         {
-             ApiResponse<FarmInfo> localVarResponse = await GetFarmAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<FarmInfo> localVarResponse = await GetFarmAsyncWithHttpInfo(id);
+            return localVarResponse.Data;
 
         }
 
@@ -3962,7 +3963,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (FarmInfo)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FarmInfo>> GetFarmAsyncWithHttpInfo (string id)
+        public async System.Threading.Tasks.Task<ApiResponse<FarmInfo>> GetFarmAsyncWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3998,11 +3999,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4012,7 +4013,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<FarmInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (FarmInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FarmInfo)));
+                (FarmInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FarmInfo)));
         }
 
         /// <summary>
@@ -4021,10 +4022,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>MachineInfo</returns>
-        public MachineInfo GetMachineUsingGET (string id)
+        public MachineInfo GetMachineUsingGET(string id)
         {
-             ApiResponse<MachineInfo> localVarResponse = GetMachineUsingGETWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<MachineInfo> localVarResponse = GetMachineUsingGETWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -4033,7 +4034,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of MachineInfo</returns>
-        public ApiResponse< MachineInfo > GetMachineUsingGETWithHttpInfo (string id)
+        public ApiResponse<MachineInfo> GetMachineUsingGETWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4069,11 +4070,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4083,7 +4084,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<MachineInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (MachineInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MachineInfo)));
+                (MachineInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MachineInfo)));
         }
 
         /// <summary>
@@ -4092,10 +4093,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of MachineInfo</returns>
-        public async System.Threading.Tasks.Task<MachineInfo> GetMachineUsingGETAsync (string id)
+        public async System.Threading.Tasks.Task<MachineInfo> GetMachineUsingGETAsync(string id)
         {
-             ApiResponse<MachineInfo> localVarResponse = await GetMachineUsingGETAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<MachineInfo> localVarResponse = await GetMachineUsingGETAsyncWithHttpInfo(id);
+            return localVarResponse.Data;
 
         }
 
@@ -4105,7 +4106,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (MachineInfo)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<MachineInfo>> GetMachineUsingGETAsyncWithHttpInfo (string id)
+        public async System.Threading.Tasks.Task<ApiResponse<MachineInfo>> GetMachineUsingGETAsyncWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4141,11 +4142,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4155,7 +4156,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<MachineInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (MachineInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MachineInfo)));
+                (MachineInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MachineInfo)));
         }
 
         /// <summary>
@@ -4164,10 +4165,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>SessionInfo</returns>
-        public SessionInfo GetSessionInfo (string id)
+        public SessionInfo GetSessionInfo(string id)
         {
-             ApiResponse<SessionInfo> localVarResponse = GetSessionInfoWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<SessionInfo> localVarResponse = GetSessionInfoWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -4176,7 +4177,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of SessionInfo</returns>
-        public ApiResponse< SessionInfo > GetSessionInfoWithHttpInfo (string id)
+        public ApiResponse<SessionInfo> GetSessionInfoWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4212,11 +4213,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4226,7 +4227,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<SessionInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (SessionInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SessionInfo)));
+                (SessionInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SessionInfo)));
         }
 
         /// <summary>
@@ -4235,10 +4236,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of SessionInfo</returns>
-        public async System.Threading.Tasks.Task<SessionInfo> GetSessionInfoAsync (string id)
+        public async System.Threading.Tasks.Task<SessionInfo> GetSessionInfoAsync(string id)
         {
-             ApiResponse<SessionInfo> localVarResponse = await GetSessionInfoAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<SessionInfo> localVarResponse = await GetSessionInfoAsyncWithHttpInfo(id);
+            return localVarResponse.Data;
 
         }
 
@@ -4248,7 +4249,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (SessionInfo)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SessionInfo>> GetSessionInfoAsyncWithHttpInfo (string id)
+        public async System.Threading.Tasks.Task<ApiResponse<SessionInfo>> GetSessionInfoAsyncWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4284,11 +4285,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4298,7 +4299,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<SessionInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (SessionInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SessionInfo)));
+                (SessionInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SessionInfo)));
         }
 
         /// <summary>
@@ -4307,10 +4308,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="applicationPoolId">Application Pool ID</param>
         /// <returns>List&lt;ApplicationIconInfo&gt;</returns>
-        public List<ApplicationIconInfo> ListApplicationIcons (string applicationPoolId)
+        public List<ApplicationIconInfo> ListApplicationIcons(string applicationPoolId)
         {
-             ApiResponse<List<ApplicationIconInfo>> localVarResponse = ListApplicationIconsWithHttpInfo(applicationPoolId);
-             return localVarResponse.Data;
+            ApiResponse<List<ApplicationIconInfo>> localVarResponse = ListApplicationIconsWithHttpInfo(applicationPoolId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -4319,7 +4320,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="applicationPoolId">Application Pool ID</param>
         /// <returns>ApiResponse of List&lt;ApplicationIconInfo&gt;</returns>
-        public ApiResponse< List<ApplicationIconInfo> > ListApplicationIconsWithHttpInfo (string applicationPoolId)
+        public ApiResponse<List<ApplicationIconInfo>> ListApplicationIconsWithHttpInfo(string applicationPoolId)
         {
             // verify the required parameter 'applicationPoolId' is set
             if (applicationPoolId == null)
@@ -4355,11 +4356,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4369,7 +4370,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<ApplicationIconInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<ApplicationIconInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ApplicationIconInfo>)));
+                (List<ApplicationIconInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ApplicationIconInfo>)));
         }
 
         /// <summary>
@@ -4378,10 +4379,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="applicationPoolId">Application Pool ID</param>
         /// <returns>Task of List&lt;ApplicationIconInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ApplicationIconInfo>> ListApplicationIconsAsync (string applicationPoolId)
+        public async System.Threading.Tasks.Task<List<ApplicationIconInfo>> ListApplicationIconsAsync(string applicationPoolId)
         {
-             ApiResponse<List<ApplicationIconInfo>> localVarResponse = await ListApplicationIconsAsyncWithHttpInfo(applicationPoolId);
-             return localVarResponse.Data;
+            ApiResponse<List<ApplicationIconInfo>> localVarResponse = await ListApplicationIconsAsyncWithHttpInfo(applicationPoolId);
+            return localVarResponse.Data;
 
         }
 
@@ -4391,7 +4392,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="applicationPoolId">Application Pool ID</param>
         /// <returns>Task of ApiResponse (List&lt;ApplicationIconInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<ApplicationIconInfo>>> ListApplicationIconsAsyncWithHttpInfo (string applicationPoolId)
+        public async System.Threading.Tasks.Task<ApiResponse<List<ApplicationIconInfo>>> ListApplicationIconsAsyncWithHttpInfo(string applicationPoolId)
         {
             // verify the required parameter 'applicationPoolId' is set
             if (applicationPoolId == null)
@@ -4427,11 +4428,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4441,7 +4442,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<ApplicationIconInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<ApplicationIconInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ApplicationIconInfo>)));
+                (List<ApplicationIconInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ApplicationIconInfo>)));
         }
 
         /// <summary>
@@ -4449,10 +4450,31 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;ApplicationPoolInfo&gt;</returns>
-        public List<ApplicationPoolInfo> ListApplicationPools ()
+        public List<ApplicationPoolInfo> ListApplicationPools(CustomModel.Pagination Pagination = null, string filter = null)
         {
-             ApiResponse<List<ApplicationPoolInfo>> localVarResponse = ListApplicationPoolsWithHttpInfo();
-             return localVarResponse.Data;
+
+            List<ApplicationPoolInfo> ReturnValue = new List<ApplicationPoolInfo>();
+            Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+            while (true)
+            {
+                ApiResponse<List<ApplicationPoolInfo>> localVarResponse = ListApplicationPoolsWithHttpInfo(Pagination, filter);
+
+                ReturnValue.AddRange(localVarResponse.Data);
+
+                if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                {
+                    break;
+                }
+                else
+                {
+                    Pagination.page += 1;
+                }
+            }
+            return ReturnValue;
+
+            //ApiResponse<List<ApplicationPoolInfo>> localVarResponse = ListApplicationPoolsWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null);
+            //return localVarResponse.Data;
         }
 
         /// <summary>
@@ -4460,7 +4482,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;ApplicationPoolInfo&gt;</returns>
-        public ApiResponse< List<ApplicationPoolInfo> > ListApplicationPoolsWithHttpInfo ()
+        public ApiResponse<List<ApplicationPoolInfo>> ListApplicationPoolsWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null)
         {
 
             var localVarPath = "./inventory/v1/application-pools";
@@ -4491,12 +4513,23 @@ namespace VMware.Horizon.RESTAPI.Api
                 localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
             }
 
+            if (!string.IsNullOrEmpty(filter))
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter));
+            }
+
+            if (Pagination != null)
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", Pagination.page));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "size", Pagination.size));
+            }
+
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4506,7 +4539,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<ApplicationPoolInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<ApplicationPoolInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ApplicationPoolInfo>)));
+                (List<ApplicationPoolInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ApplicationPoolInfo>)));
         }
 
         /// <summary>
@@ -4514,10 +4547,32 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;ApplicationPoolInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ApplicationPoolInfo>> ListApplicationPoolsAsync ()
+        public async System.Threading.Tasks.Task<List<ApplicationPoolInfo>> ListApplicationPoolsAsync(CustomModel.Pagination Pagination = null, string filter = null)
         {
-             ApiResponse<List<ApplicationPoolInfo>> localVarResponse = await ListApplicationPoolsAsyncWithHttpInfo();
-             return localVarResponse.Data;
+            List<ApplicationPoolInfo> ReturnValue = new List<ApplicationPoolInfo>();
+            Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+            while (true)
+            {
+                ApiResponse<List<ApplicationPoolInfo>> localVarResponse = await ListApplicationPoolsAsyncWithHttpInfo(Pagination, filter);
+
+                lock (ReturnValue)
+                {
+                    ReturnValue.AddRange(localVarResponse.Data);
+
+                    if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Pagination.page += 1;
+                    }
+                }
+            }
+            return ReturnValue;
+            //ApiResponse<List<ApplicationPoolInfo>> localVarResponse = await ListApplicationPoolsAsyncWithHttpInfo(Pagination, filter);
+            //return localVarResponse.Data;
 
         }
 
@@ -4526,7 +4581,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;ApplicationPoolInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<ApplicationPoolInfo>>> ListApplicationPoolsAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<List<ApplicationPoolInfo>>> ListApplicationPoolsAsyncWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null)
         {
 
             var localVarPath = "./inventory/v1/application-pools";
@@ -4557,12 +4612,23 @@ namespace VMware.Horizon.RESTAPI.Api
                 localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
             }
 
+            if (!string.IsNullOrEmpty(filter))
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter));
+            }
+
+            if (Pagination != null)
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", Pagination.page));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "size", Pagination.size));
+            }
+
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4572,7 +4638,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<ApplicationPoolInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<ApplicationPoolInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ApplicationPoolInfo>)));
+                (List<ApplicationPoolInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ApplicationPoolInfo>)));
         }
 
         /// <summary>
@@ -4580,10 +4646,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;DesktopPoolInfo&gt;</returns>
-        public List<DesktopPoolInfo> ListDesktopPools ()
+        public List<DesktopPoolInfo> ListDesktopPools()
         {
-             ApiResponse<List<DesktopPoolInfo>> localVarResponse = ListDesktopPoolsWithHttpInfo();
-             return localVarResponse.Data;
+            ApiResponse<List<DesktopPoolInfo>> localVarResponse = ListDesktopPoolsWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -4591,7 +4657,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;DesktopPoolInfo&gt;</returns>
-        public ApiResponse< List<DesktopPoolInfo> > ListDesktopPoolsWithHttpInfo ()
+        public ApiResponse<List<DesktopPoolInfo>> ListDesktopPoolsWithHttpInfo()
         {
 
             var localVarPath = "./inventory/v1/desktop-pools";
@@ -4623,11 +4689,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4637,7 +4703,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<DesktopPoolInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<DesktopPoolInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DesktopPoolInfo>)));
+                (List<DesktopPoolInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DesktopPoolInfo>)));
         }
 
         /// <summary>
@@ -4645,10 +4711,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;DesktopPoolInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<DesktopPoolInfo>> ListDesktopPoolsAsync ()
+        public async System.Threading.Tasks.Task<List<DesktopPoolInfo>> ListDesktopPoolsAsync()
         {
-             ApiResponse<List<DesktopPoolInfo>> localVarResponse = await ListDesktopPoolsAsyncWithHttpInfo();
-             return localVarResponse.Data;
+            ApiResponse<List<DesktopPoolInfo>> localVarResponse = await ListDesktopPoolsAsyncWithHttpInfo();
+            return localVarResponse.Data;
 
         }
 
@@ -4657,7 +4723,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;DesktopPoolInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<DesktopPoolInfo>>> ListDesktopPoolsAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<List<DesktopPoolInfo>>> ListDesktopPoolsAsyncWithHttpInfo()
         {
 
             var localVarPath = "./inventory/v1/desktop-pools";
@@ -4689,11 +4755,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4703,7 +4769,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<DesktopPoolInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<DesktopPoolInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DesktopPoolInfo>)));
+                (List<DesktopPoolInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DesktopPoolInfo>)));
         }
 
         /// <summary>
@@ -4711,10 +4777,32 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;DesktopPoolInfoV2&gt;</returns>
-        public List<DesktopPoolInfoV2> ListDesktopPoolsV2 ()
+        public List<DesktopPoolInfoV2> ListDesktopPoolsV2(CustomModel.Pagination Pagination = null)
         {
-             ApiResponse<List<DesktopPoolInfoV2>> localVarResponse = ListDesktopPoolsV2WithHttpInfo();
-             return localVarResponse.Data;
+                List<DesktopPoolInfoV2> ReturnValue = new List<DesktopPoolInfoV2>();
+                Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+                while (true)
+                {
+                    ApiResponse<List<DesktopPoolInfoV2>> localVarResponse = ListDesktopPoolsV2WithHttpInfo(Pagination);
+
+                
+                    ReturnValue.AddRange(localVarResponse.Data);
+
+                    if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Pagination.page += 1;
+                    }
+                
+            }
+                return ReturnValue;
+
+            //    ApiResponse<List<DesktopPoolInfoV2>> localVarResponse = ListDesktopPoolsV2WithHttpInfo(Pagination);
+            //return localVarResponse.Data;
         }
 
         /// <summary>
@@ -4722,7 +4810,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;DesktopPoolInfoV2&gt;</returns>
-        public ApiResponse< List<DesktopPoolInfoV2> > ListDesktopPoolsV2WithHttpInfo ()
+        public ApiResponse<List<DesktopPoolInfoV2>> ListDesktopPoolsV2WithHttpInfo(CustomModel.Pagination Pagination = null)
         {
 
             var localVarPath = "./inventory/v2/desktop-pools";
@@ -4753,12 +4841,19 @@ namespace VMware.Horizon.RESTAPI.Api
                 localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
             }
 
+            if (Pagination != null)
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", Pagination.page));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "size", Pagination.size));
+            }
+
+
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4768,7 +4863,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<DesktopPoolInfoV2>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<DesktopPoolInfoV2>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DesktopPoolInfoV2>)));
+                (List<DesktopPoolInfoV2>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DesktopPoolInfoV2>)));
         }
 
         /// <summary>
@@ -4776,10 +4871,33 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;DesktopPoolInfoV2&gt;</returns>
-        public async System.Threading.Tasks.Task<List<DesktopPoolInfoV2>> ListDesktopPoolsV2Async ()
+        public async System.Threading.Tasks.Task<List<DesktopPoolInfoV2>> ListDesktopPoolsV2Async(CustomModel.Pagination Pagination = null)
         {
-             ApiResponse<List<DesktopPoolInfoV2>> localVarResponse = await ListDesktopPoolsV2AsyncWithHttpInfo();
-             return localVarResponse.Data;
+                List<DesktopPoolInfoV2> ReturnValue = new List<DesktopPoolInfoV2>();
+                Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+                while (true)
+                {
+                    ApiResponse<List<DesktopPoolInfoV2>> localVarResponse =await ListDesktopPoolsV2AsyncWithHttpInfo(Pagination);
+
+                lock (ReturnValue)
+                {
+                    ReturnValue.AddRange(localVarResponse.Data);
+
+                    if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Pagination.page += 1;
+                    }
+                }
+            }
+                return ReturnValue;
+
+                //ApiResponse<List<DesktopPoolInfoV2>> localVarResponse = await ListDesktopPoolsV2AsyncWithHttpInfo();
+           // return localVarResponse.Data;
 
         }
 
@@ -4788,7 +4906,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;DesktopPoolInfoV2&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<DesktopPoolInfoV2>>> ListDesktopPoolsV2AsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<List<DesktopPoolInfoV2>>> ListDesktopPoolsV2AsyncWithHttpInfo(CustomModel.Pagination Pagination = null)
         {
 
             var localVarPath = "./inventory/v2/desktop-pools";
@@ -4819,12 +4937,18 @@ namespace VMware.Horizon.RESTAPI.Api
                 localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
             }
 
+            if (Pagination != null)
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", Pagination.page));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "size", Pagination.size));
+            }
+
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4834,7 +4958,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<DesktopPoolInfoV2>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<DesktopPoolInfoV2>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DesktopPoolInfoV2>)));
+                (List<DesktopPoolInfoV2>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DesktopPoolInfoV2>)));
         }
 
         /// <summary>
@@ -4842,10 +4966,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;FarmInfo&gt;</returns>
-        public List<FarmInfo> ListFarms ()
+        public List<FarmInfo> ListFarms()
         {
-             ApiResponse<List<FarmInfo>> localVarResponse = ListFarmsWithHttpInfo();
-             return localVarResponse.Data;
+            ApiResponse<List<FarmInfo>> localVarResponse = ListFarmsWithHttpInfo();
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -4853,7 +4977,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;FarmInfo&gt;</returns>
-        public ApiResponse< List<FarmInfo> > ListFarmsWithHttpInfo ()
+        public ApiResponse<List<FarmInfo>> ListFarmsWithHttpInfo()
         {
 
             var localVarPath = "./inventory/v1/farms";
@@ -4885,11 +5009,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4899,7 +5023,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<FarmInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<FarmInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<FarmInfo>)));
+                (List<FarmInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<FarmInfo>)));
         }
 
         /// <summary>
@@ -4907,10 +5031,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;FarmInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<FarmInfo>> ListFarmsAsync ()
+        public async System.Threading.Tasks.Task<List<FarmInfo>> ListFarmsAsync()
         {
-             ApiResponse<List<FarmInfo>> localVarResponse = await ListFarmsAsyncWithHttpInfo();
-             return localVarResponse.Data;
+            ApiResponse<List<FarmInfo>> localVarResponse = await ListFarmsAsyncWithHttpInfo();
+            return localVarResponse.Data;
 
         }
 
@@ -4919,7 +5043,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;FarmInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<FarmInfo>>> ListFarmsAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<List<FarmInfo>>> ListFarmsAsyncWithHttpInfo()
         {
 
             var localVarPath = "./inventory/v1/farms";
@@ -4951,11 +5075,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -4965,7 +5089,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<FarmInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<FarmInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<FarmInfo>)));
+                (List<FarmInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<FarmInfo>)));
         }
 
         /// <summary>
@@ -4974,10 +5098,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>List&lt;InstalledApplicationInfo&gt;</returns>
-        public List<InstalledApplicationInfo> ListInstalledApplications (string id)
+        public List<InstalledApplicationInfo> ListInstalledApplications(string id)
         {
-             ApiResponse<List<InstalledApplicationInfo>> localVarResponse = ListInstalledApplicationsWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<List<InstalledApplicationInfo>> localVarResponse = ListInstalledApplicationsWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -4986,7 +5110,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of List&lt;InstalledApplicationInfo&gt;</returns>
-        public ApiResponse< List<InstalledApplicationInfo> > ListInstalledApplicationsWithHttpInfo (string id)
+        public ApiResponse<List<InstalledApplicationInfo>> ListInstalledApplicationsWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5022,11 +5146,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5036,7 +5160,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<InstalledApplicationInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<InstalledApplicationInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<InstalledApplicationInfo>)));
+                (List<InstalledApplicationInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<InstalledApplicationInfo>)));
         }
 
         /// <summary>
@@ -5045,10 +5169,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of List&lt;InstalledApplicationInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<InstalledApplicationInfo>> ListInstalledApplicationsAsync (string id)
+        public async System.Threading.Tasks.Task<List<InstalledApplicationInfo>> ListInstalledApplicationsAsync(string id)
         {
-             ApiResponse<List<InstalledApplicationInfo>> localVarResponse = await ListInstalledApplicationsAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<List<InstalledApplicationInfo>> localVarResponse = await ListInstalledApplicationsAsyncWithHttpInfo(id);
+            return localVarResponse.Data;
 
         }
 
@@ -5058,7 +5182,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (List&lt;InstalledApplicationInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<InstalledApplicationInfo>>> ListInstalledApplicationsAsyncWithHttpInfo (string id)
+        public async System.Threading.Tasks.Task<ApiResponse<List<InstalledApplicationInfo>>> ListInstalledApplicationsAsyncWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5094,11 +5218,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5108,7 +5232,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<InstalledApplicationInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<InstalledApplicationInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<InstalledApplicationInfo>)));
+                (List<InstalledApplicationInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<InstalledApplicationInfo>)));
         }
 
         /// <summary>
@@ -5117,10 +5241,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>List&lt;InstalledApplicationInfo&gt;</returns>
-        public List<InstalledApplicationInfo> ListInstalledApplications1 (string id)
+        public List<InstalledApplicationInfo> ListInstalledApplications1(string id)
         {
-             ApiResponse<List<InstalledApplicationInfo>> localVarResponse = ListInstalledApplications1WithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<List<InstalledApplicationInfo>> localVarResponse = ListInstalledApplications1WithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -5129,7 +5253,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of List&lt;InstalledApplicationInfo&gt;</returns>
-        public ApiResponse< List<InstalledApplicationInfo> > ListInstalledApplications1WithHttpInfo (string id)
+        public ApiResponse<List<InstalledApplicationInfo>> ListInstalledApplications1WithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5165,11 +5289,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5179,7 +5303,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<InstalledApplicationInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<InstalledApplicationInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<InstalledApplicationInfo>)));
+                (List<InstalledApplicationInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<InstalledApplicationInfo>)));
         }
 
         /// <summary>
@@ -5188,10 +5312,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of List&lt;InstalledApplicationInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<InstalledApplicationInfo>> ListInstalledApplications1Async (string id)
+        public async System.Threading.Tasks.Task<List<InstalledApplicationInfo>> ListInstalledApplications1Async(string id)
         {
-             ApiResponse<List<InstalledApplicationInfo>> localVarResponse = await ListInstalledApplications1AsyncWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<List<InstalledApplicationInfo>> localVarResponse = await ListInstalledApplications1AsyncWithHttpInfo(id);
+            return localVarResponse.Data;
 
         }
 
@@ -5201,7 +5325,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (List&lt;InstalledApplicationInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<InstalledApplicationInfo>>> ListInstalledApplications1AsyncWithHttpInfo (string id)
+        public async System.Threading.Tasks.Task<ApiResponse<List<InstalledApplicationInfo>>> ListInstalledApplications1AsyncWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -5237,11 +5361,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5251,7 +5375,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<InstalledApplicationInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<InstalledApplicationInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<InstalledApplicationInfo>)));
+                (List<InstalledApplicationInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<InstalledApplicationInfo>)));
         }
 
         /// <summary>
@@ -5259,10 +5383,30 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;MachineInfo&gt;</returns>
-        public List<MachineInfo> ListMachinesUsingGET ()
+        public List<MachineInfo> ListMachinesUsingGET(CustomModel.Pagination Pagination = null, string filter = null)
         {
-             ApiResponse<List<MachineInfo>> localVarResponse = ListMachinesUsingGETWithHttpInfo();
-             return localVarResponse.Data;
+            List<MachineInfo> ReturnValue = new List<MachineInfo>();
+            Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+            while (true)
+            {
+                ApiResponse<List<MachineInfo>> localVarResponse = ListMachinesUsingGETWithHttpInfo(Pagination, filter);
+
+                ReturnValue.AddRange(localVarResponse.Data);
+
+                if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                {
+                    break;
+                }
+                else
+                {
+                    Pagination.page += 1;
+                }
+            }
+            return ReturnValue;
+
+            //ApiResponse<List<MachineInfo>> localVarResponse = ListMachinesUsingGETWithHttpInfo();
+            //return localVarResponse.Data;
         }
 
         /// <summary>
@@ -5270,7 +5414,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;MachineInfo&gt;</returns>
-        public ApiResponse< List<MachineInfo> > ListMachinesUsingGETWithHttpInfo ()
+        public ApiResponse<List<MachineInfo>> ListMachinesUsingGETWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null)
         {
 
             var localVarPath = "./inventory/v1/machines";
@@ -5301,12 +5445,24 @@ namespace VMware.Horizon.RESTAPI.Api
                 localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
             }
 
+            if (!string.IsNullOrEmpty(filter))
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter));
+            }
+
+            if (Pagination != null)
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", Pagination.page));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "size", Pagination.size));
+            }
+
+
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5316,7 +5472,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<MachineInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<MachineInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MachineInfo>)));
+                (List<MachineInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MachineInfo>)));
         }
 
         /// <summary>
@@ -5324,10 +5480,33 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;MachineInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<MachineInfo>> ListMachinesUsingGETAsync ()
+        public async System.Threading.Tasks.Task<List<MachineInfo>> ListMachinesUsingGETAsync(CustomModel.Pagination Pagination = null, string filter = null)
         {
-             ApiResponse<List<MachineInfo>> localVarResponse = await ListMachinesUsingGETAsyncWithHttpInfo();
-             return localVarResponse.Data;
+            List<MachineInfo> ReturnValue = new List<MachineInfo>();
+            Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+            while (true)
+            {
+                ApiResponse<List<MachineInfo>> localVarResponse = await ListMachinesUsingGETAsyncWithHttpInfo(Pagination,filter);
+
+                lock (ReturnValue)
+                {
+                    ReturnValue.AddRange(localVarResponse.Data);
+
+                    if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Pagination.page += 1;
+                    }
+                }
+            }
+            return ReturnValue;
+
+            //ApiResponse<List<MachineInfo>> localVarResponse = await ListMachinesUsingGETAsyncWithHttpInfo();
+            //return localVarResponse.Data;
 
         }
 
@@ -5336,7 +5515,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;MachineInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<MachineInfo>>> ListMachinesUsingGETAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<List<MachineInfo>>> ListMachinesUsingGETAsyncWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null)
         {
 
             var localVarPath = "./inventory/v1/machines";
@@ -5367,12 +5546,24 @@ namespace VMware.Horizon.RESTAPI.Api
                 localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
             }
 
+            if (!string.IsNullOrEmpty(filter))
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter));
+            }
+
+            if (Pagination != null)
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", Pagination.page));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "size", Pagination.size));
+            }
+
+
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5382,7 +5573,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<MachineInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<MachineInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MachineInfo>)));
+                (List<MachineInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MachineInfo>)));
         }
 
         /// <summary>
@@ -5390,10 +5581,27 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;SessionInfo&gt;</returns>
-        public List<SessionInfo> ListSessionInfo ()
+        public List<SessionInfo> ListSessionInfo(CustomModel.Pagination Pagination = null)
         {
-             ApiResponse<List<SessionInfo>> localVarResponse = ListSessionInfoWithHttpInfo();
-             return localVarResponse.Data;
+            List<SessionInfo> ReturnValue = new List<SessionInfo>();
+            Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+            while (true)
+            {
+                ApiResponse<List<SessionInfo>> localVarResponse =  ListSessionInfoWithHttpInfo(Pagination);
+
+                ReturnValue.AddRange(localVarResponse.Data);
+
+                if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                {
+                    break;
+                }
+                else
+                {
+                    Pagination.page += 1;
+                }
+            }
+            return ReturnValue;
         }
 
         /// <summary>
@@ -5401,7 +5609,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;SessionInfo&gt;</returns>
-        public ApiResponse< List<SessionInfo> > ListSessionInfoWithHttpInfo ()
+        public ApiResponse<List<SessionInfo>> ListSessionInfoWithHttpInfo(CustomModel.Pagination Pagination = null)
         {
 
             var localVarPath = "./inventory/v1/sessions";
@@ -5432,12 +5640,18 @@ namespace VMware.Horizon.RESTAPI.Api
                 localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
             }
 
+            if (Pagination != null)
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", Pagination.page));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "size", Pagination.size));
+            }
+
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5445,9 +5659,10 @@ namespace VMware.Horizon.RESTAPI.Api
                 if (exception != null) throw exception;
             }
 
+
             return new ApiResponse<List<SessionInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<SessionInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SessionInfo>)));
+                (List<SessionInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SessionInfo>)));
         }
 
         /// <summary>
@@ -5455,11 +5670,31 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;SessionInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<SessionInfo>> ListSessionInfoAsync ()
+        public async System.Threading.Tasks.Task<List<SessionInfo>> ListSessionInfoAsync(CustomModel.Pagination Pagination = null)
         {
-             ApiResponse<List<SessionInfo>> localVarResponse = await ListSessionInfoAsyncWithHttpInfo();
-             return localVarResponse.Data;
 
+            List<SessionInfo> ReturnValue = new List<SessionInfo>();
+            Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+            while (true)
+            {
+                ApiResponse<List<SessionInfo>> localVarResponse = await ListSessionInfoAsyncWithHttpInfo(Pagination);
+
+                lock (ReturnValue)
+                {
+                    ReturnValue.AddRange(localVarResponse.Data);
+
+                    if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Pagination.page += 1;
+                    }
+                }
+            }
+            return ReturnValue;
         }
 
         /// <summary>
@@ -5467,7 +5702,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;SessionInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<SessionInfo>>> ListSessionInfoAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<List<SessionInfo>>> ListSessionInfoAsyncWithHttpInfo(CustomModel.Pagination Pagination = null)
         {
 
             var localVarPath = "./inventory/v1/sessions";
@@ -5499,11 +5734,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5513,7 +5748,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<SessionInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<SessionInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SessionInfo>)));
+                (List<SessionInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<SessionInfo>)));
         }
 
         /// <summary>
@@ -5523,10 +5758,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of session ids to be logged off.</param>
         /// <param name="forced">Indicates to Log off session forcibly.  If passed as \&quot;true\&quot;, then sessions are logoff forcibly, even if they are locked.  If passed as \&quot;false\&quot; or not passed at all, then sessions will be normally logged off, if they are not locked. (optional, default to false)</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> LogOffSessions (List<string> body, bool? forced = null)
+        public List<BulkItemResponseInfo> LogOffSessions(List<string> body, bool? forced = null)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = LogOffSessionsWithHttpInfo(body, forced);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = LogOffSessionsWithHttpInfo(body, forced);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -5536,7 +5771,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of session ids to be logged off.</param>
         /// <param name="forced">Indicates to Log off session forcibly.  If passed as \&quot;true\&quot;, then sessions are logoff forcibly, even if they are locked.  If passed as \&quot;false\&quot; or not passed at all, then sessions will be normally logged off, if they are not locked. (optional, default to false)</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > LogOffSessionsWithHttpInfo (List<string> body, bool? forced = null)
+        public ApiResponse<List<BulkItemResponseInfo>> LogOffSessionsWithHttpInfo(List<string> body, bool? forced = null)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -5581,11 +5816,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5595,7 +5830,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -5605,10 +5840,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of session ids to be logged off.</param>
         /// <param name="forced">Indicates to Log off session forcibly.  If passed as \&quot;true\&quot;, then sessions are logoff forcibly, even if they are locked.  If passed as \&quot;false\&quot; or not passed at all, then sessions will be normally logged off, if they are not locked. (optional, default to false)</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> LogOffSessionsAsync (List<string> body, bool? forced = null)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> LogOffSessionsAsync(List<string> body, bool? forced = null)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await LogOffSessionsAsyncWithHttpInfo(body, forced);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await LogOffSessionsAsyncWithHttpInfo(body, forced);
+            return localVarResponse.Data;
 
         }
 
@@ -5619,7 +5854,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of session ids to be logged off.</param>
         /// <param name="forced">Indicates to Log off session forcibly.  If passed as \&quot;true\&quot;, then sessions are logoff forcibly, even if they are locked.  If passed as \&quot;false\&quot; or not passed at all, then sessions will be normally logged off, if they are not locked. (optional, default to false)</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> LogOffSessionsAsyncWithHttpInfo (List<string> body, bool? forced = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> LogOffSessionsAsyncWithHttpInfo(List<string> body, bool? forced = null)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -5664,11 +5899,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5678,7 +5913,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -5687,10 +5922,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be rebuilt.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> RebuildMachines (List<string> body)
+        public List<BulkItemResponseInfo> RebuildMachines(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = RebuildMachinesWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = RebuildMachinesWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -5699,7 +5934,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be rebuilt.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > RebuildMachinesWithHttpInfo (List<string> body)
+        public ApiResponse<List<BulkItemResponseInfo>> RebuildMachinesWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -5743,11 +5978,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5757,7 +5992,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -5766,10 +6001,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be rebuilt.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RebuildMachinesAsync (List<string> body)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RebuildMachinesAsync(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await RebuildMachinesAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await RebuildMachinesAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -5779,7 +6014,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be rebuilt.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RebuildMachinesAsyncWithHttpInfo (List<string> body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RebuildMachinesAsyncWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -5823,11 +6058,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5837,7 +6072,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -5846,10 +6081,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be recovered.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> RecoverMachines (List<string> body)
+        public List<BulkItemResponseInfo> RecoverMachines(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = RecoverMachinesWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = RecoverMachinesWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -5858,7 +6093,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be recovered.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > RecoverMachinesWithHttpInfo (List<string> body)
+        public ApiResponse<List<BulkItemResponseInfo>> RecoverMachinesWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -5902,11 +6137,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5916,7 +6151,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -5925,10 +6160,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be recovered.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RecoverMachinesAsync (List<string> body)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RecoverMachinesAsync(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await RecoverMachinesAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await RecoverMachinesAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -5938,7 +6173,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be recovered.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RecoverMachinesAsyncWithHttpInfo (List<string> body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RecoverMachinesAsyncWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -5982,11 +6217,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -5996,7 +6231,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -6006,10 +6241,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be removed from the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> RemoveMachines (List<string> body, string id)
+        public List<BulkItemResponseInfo> RemoveMachines(List<string> body, string id)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = RemoveMachinesWithHttpInfo(body, id);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = RemoveMachinesWithHttpInfo(body, id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -6019,7 +6254,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be removed from the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > RemoveMachinesWithHttpInfo (List<string> body, string id)
+        public ApiResponse<List<BulkItemResponseInfo>> RemoveMachinesWithHttpInfo(List<string> body, string id)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -6067,11 +6302,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6081,7 +6316,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -6091,10 +6326,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be removed from the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RemoveMachinesAsync (List<string> body, string id)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RemoveMachinesAsync(List<string> body, string id)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await RemoveMachinesAsyncWithHttpInfo(body, id);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await RemoveMachinesAsyncWithHttpInfo(body, id);
+            return localVarResponse.Data;
 
         }
 
@@ -6105,7 +6340,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of Machine Ids representing the machines to be removed from the desktop pool.</param>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RemoveMachinesAsyncWithHttpInfo (List<string> body, string id)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RemoveMachinesAsyncWithHttpInfo(List<string> body, string id)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -6153,11 +6388,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6167,7 +6402,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -6176,10 +6411,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be reset.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> ResetMachines (List<string> body)
+        public List<BulkItemResponseInfo> ResetMachines(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = ResetMachinesWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = ResetMachinesWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -6188,7 +6423,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be reset.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > ResetMachinesWithHttpInfo (List<string> body)
+        public ApiResponse<List<BulkItemResponseInfo>> ResetMachinesWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -6232,11 +6467,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6246,7 +6481,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -6255,10 +6490,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be reset.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> ResetMachinesAsync (List<string> body)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> ResetMachinesAsync(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await ResetMachinesAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await ResetMachinesAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -6268,7 +6503,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be reset.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> ResetMachinesAsyncWithHttpInfo (List<string> body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> ResetMachinesAsyncWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -6312,11 +6547,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6326,7 +6561,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -6335,10 +6570,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be reset.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> ResetSessions (List<string> body)
+        public List<BulkItemResponseInfo> ResetSessions(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = ResetSessionsWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = ResetSessionsWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -6347,7 +6582,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be reset.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > ResetSessionsWithHttpInfo (List<string> body)
+        public ApiResponse<List<BulkItemResponseInfo>> ResetSessionsWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -6391,11 +6626,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6405,7 +6640,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -6414,10 +6649,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be reset.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> ResetSessionsAsync (List<string> body)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> ResetSessionsAsync(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await ResetSessionsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await ResetSessionsAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -6427,7 +6662,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be reset.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> ResetSessionsAsyncWithHttpInfo (List<string> body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> ResetSessionsAsyncWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -6471,11 +6706,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6485,7 +6720,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -6494,10 +6729,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be restarted.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> RestartMachines (List<string> body)
+        public List<BulkItemResponseInfo> RestartMachines(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = RestartMachinesWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = RestartMachinesWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -6506,7 +6741,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be restarted.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > RestartMachinesWithHttpInfo (List<string> body)
+        public ApiResponse<List<BulkItemResponseInfo>> RestartMachinesWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -6550,11 +6785,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6564,7 +6799,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -6573,10 +6808,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be restarted.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RestartMachinesAsync (List<string> body)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RestartMachinesAsync(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await RestartMachinesAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await RestartMachinesAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -6586,7 +6821,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of Machine Ids representing the machines to be restarted.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RestartMachinesAsyncWithHttpInfo (List<string> body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RestartMachinesAsyncWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -6630,11 +6865,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6644,7 +6879,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -6653,10 +6888,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be restarted.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> RestartSessions (List<string> body)
+        public List<BulkItemResponseInfo> RestartSessions(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = RestartSessionsWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = RestartSessionsWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -6665,7 +6900,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be restarted.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > RestartSessionsWithHttpInfo (List<string> body)
+        public ApiResponse<List<BulkItemResponseInfo>> RestartSessionsWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -6709,11 +6944,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6723,7 +6958,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -6732,10 +6967,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be restarted.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RestartSessionsAsync (List<string> body)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> RestartSessionsAsync(List<string> body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await RestartSessionsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await RestartSessionsAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -6745,7 +6980,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of session ids to be restarted.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RestartSessionsAsyncWithHttpInfo (List<string> body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> RestartSessionsAsyncWithHttpInfo(List<string> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -6789,11 +7024,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6803,7 +7038,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -6812,10 +7047,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Message information object to be sent to sessions.</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> SendMessageToSessions (SessionSendMessageSpec body)
+        public List<BulkItemResponseInfo> SendMessageToSessions(SessionSendMessageSpec body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = SendMessageToSessionsWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = SendMessageToSessionsWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -6824,7 +7059,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Message information object to be sent to sessions.</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > SendMessageToSessionsWithHttpInfo (SessionSendMessageSpec body)
+        public ApiResponse<List<BulkItemResponseInfo>> SendMessageToSessionsWithHttpInfo(SessionSendMessageSpec body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -6868,11 +7103,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6882,7 +7117,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -6891,10 +7126,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Message information object to be sent to sessions.</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> SendMessageToSessionsAsync (SessionSendMessageSpec body)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> SendMessageToSessionsAsync(SessionSendMessageSpec body)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await SendMessageToSessionsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await SendMessageToSessionsAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -6904,7 +7139,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Message information object to be sent to sessions.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> SendMessageToSessionsAsyncWithHttpInfo (SessionSendMessageSpec body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> SendMessageToSessionsAsyncWithHttpInfo(SessionSendMessageSpec body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -6948,11 +7183,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -6962,7 +7197,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -6972,10 +7207,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be un-assigned from the machine.</param>
         /// <param name="id">id</param>
         /// <returns>List&lt;BulkItemResponseInfo&gt;</returns>
-        public List<BulkItemResponseInfo> UnassignUsers (List<string> body, string id)
+        public List<BulkItemResponseInfo> UnassignUsers(List<string> body, string id)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = UnassignUsersWithHttpInfo(body, id);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = UnassignUsersWithHttpInfo(body, id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -6985,7 +7220,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be un-assigned from the machine.</param>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of List&lt;BulkItemResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkItemResponseInfo> > UnassignUsersWithHttpInfo (List<string> body, string id)
+        public ApiResponse<List<BulkItemResponseInfo>> UnassignUsersWithHttpInfo(List<string> body, string id)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -7033,11 +7268,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -7047,7 +7282,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -7057,10 +7292,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be un-assigned from the machine.</param>
         /// <param name="id">id</param>
         /// <returns>Task of List&lt;BulkItemResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> UnassignUsersAsync (List<string> body, string id)
+        public async System.Threading.Tasks.Task<List<BulkItemResponseInfo>> UnassignUsersAsync(List<string> body, string id)
         {
-             ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await UnassignUsersAsyncWithHttpInfo(body, id);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkItemResponseInfo>> localVarResponse = await UnassignUsersAsyncWithHttpInfo(body, id);
+            return localVarResponse.Data;
 
         }
 
@@ -7071,7 +7306,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">List of User SIDs representing the users to be un-assigned from the machine.</param>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (List&lt;BulkItemResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> UnassignUsersAsyncWithHttpInfo (List<string> body, string id)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkItemResponseInfo>>> UnassignUsersAsyncWithHttpInfo(List<string> body, string id)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -7119,11 +7354,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -7133,7 +7368,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkItemResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkItemResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
+                (List<BulkItemResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkItemResponseInfo>)));
         }
 
         /// <summary>
@@ -7143,9 +7378,9 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">Application pool object to be updated.</param>
         /// <param name="id">id</param>
         /// <returns></returns>
-        public void UpdateApplicationPool (ApplicationPoolUpdateSpec body, string id)
+        public void UpdateApplicationPool(ApplicationPoolUpdateSpec body, string id)
         {
-             UpdateApplicationPoolWithHttpInfo(body, id);
+            UpdateApplicationPoolWithHttpInfo(body, id);
         }
 
         /// <summary>
@@ -7155,7 +7390,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">Application pool object to be updated.</param>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> UpdateApplicationPoolWithHttpInfo (ApplicationPoolUpdateSpec body, string id)
+        public ApiResponse<Object> UpdateApplicationPoolWithHttpInfo(ApplicationPoolUpdateSpec body, string id)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -7203,11 +7438,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -7227,9 +7462,9 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">Application pool object to be updated.</param>
         /// <param name="id">id</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateApplicationPoolAsync (ApplicationPoolUpdateSpec body, string id)
+        public async System.Threading.Tasks.Task UpdateApplicationPoolAsync(ApplicationPoolUpdateSpec body, string id)
         {
-             await UpdateApplicationPoolAsyncWithHttpInfo(body, id);
+            await UpdateApplicationPoolAsyncWithHttpInfo(body, id);
 
         }
 
@@ -7240,7 +7475,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <param name="body">Application pool object to be updated.</param>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateApplicationPoolAsyncWithHttpInfo (ApplicationPoolUpdateSpec body, string id)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateApplicationPoolAsyncWithHttpInfo(ApplicationPoolUpdateSpec body, string id)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -7288,11 +7523,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {

@@ -1,0 +1,36 @@
+CustomModel.Pagination Pagination = null)
+        {
+            List<SessionInfo> ReturnValue = new List<SessionInfo>();
+            Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+            while (true)
+            {
+                ApiResponse<List<SessionInfo>> localVarResponse =  ListSessionInfoWithHttpInfo(Pagination);
+
+                ReturnValue.AddRange(localVarResponse.Data);
+
+                if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                {
+                    break;
+                }
+                else
+                {
+                    Pagination.page += 1;
+                }
+            }
+            return ReturnValue;
+
+CustomModel.Pagination Pagination = null
+string filter=null
+CustomModel.Pagination Pagination = null, string filter=null
+
+if (!string.IsNullOrEmpty(filter))
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter));
+            }
+
+if (Pagination != null)
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", Pagination.page));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "size", Pagination.size));
+            }

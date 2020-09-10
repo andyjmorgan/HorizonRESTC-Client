@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorizonEntitlementsDemo", "HorizonEntitlementsDemo.csproj", "{EF24C934-2EAA-4FCD-950A-E1CAB102DD39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF24C934-2EAA-4FCD-950A-E1CAB102DD39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF24C934-2EAA-4FCD-950A-E1CAB102DD39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF24C934-2EAA-4FCD-950A-E1CAB102DD39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF24C934-2EAA-4FCD-950A-E1CAB102DD39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CA6091A-421E-4360-A94C-E87FA0C29361}
+	EndGlobalSection
+EndGlobal

@@ -12,11 +12,13 @@ namespace NetFramework472CSharpExample
         static void Main(string[] args)
         {
 
-            HorizonRESTClient client = new HorizonRESTClient("https://ConnectionServer.Domain.local/rest");
+            HorizonRESTClient client = new HorizonRESTClient("https://pod1hcon1.lab.local/rest");
             try
             {
-                client.Logon("UserName", "Password", "Domain");
+                client.Logon("andy", "F0rgetmenot10l!?", "lab");
 
+                var env = client.Configuration.GetEnvironmentUsingGET();
+                var rcx = client.Configuration.ListRCXServers();
                 // list all farms health
                 var farms = client.Monitoring.ListFarmMonitors();
                 Console.WriteLine("Farms: {0}", farms.Count);
@@ -33,6 +35,7 @@ namespace NetFramework472CSharpExample
                 client.RefreshToken();
 
                 var Pools = client.Inventory.ListDesktopPools();
+                var poolsv2 = client.Inventory.ListDesktopPoolsV2();
                 Console.WriteLine("pools: {0}", Pools.Count);
 
                 // get information about the first pool

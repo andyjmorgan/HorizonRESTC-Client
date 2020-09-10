@@ -33,7 +33,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be created.</param>
         /// <returns>List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        List<BulkEntitlementResponseInfo> BulkCreateApplicationPoolEntitlements (List<EntitlementSpec> body);
+        List<BulkEntitlementResponseInfo> BulkCreateApplicationPoolEntitlements(List<EntitlementSpec> body);
 
         /// <summary>
         /// Create the bulk entitlements for a set of application pools
@@ -44,7 +44,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be created.</param>
         /// <returns>ApiResponse of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        ApiResponse<List<BulkEntitlementResponseInfo>> BulkCreateApplicationPoolEntitlementsWithHttpInfo (List<EntitlementSpec> body);
+        ApiResponse<List<BulkEntitlementResponseInfo>> BulkCreateApplicationPoolEntitlementsWithHttpInfo(List<EntitlementSpec> body);
         /// <summary>
         /// Create the bulk entitlements for a set of desktop pools
         /// </summary>
@@ -54,7 +54,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be created.</param>
         /// <returns>List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        List<BulkEntitlementResponseInfo> BulkCreateDesktopPoolEntitlements (List<EntitlementSpec> body);
+        List<BulkEntitlementResponseInfo> BulkCreateDesktopPoolEntitlements(List<EntitlementSpec> body);
 
         /// <summary>
         /// Create the bulk entitlements for a set of desktop pools
@@ -65,7 +65,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be created.</param>
         /// <returns>ApiResponse of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        ApiResponse<List<BulkEntitlementResponseInfo>> BulkCreateDesktopPoolEntitlementsWithHttpInfo (List<EntitlementSpec> body);
+        ApiResponse<List<BulkEntitlementResponseInfo>> BulkCreateDesktopPoolEntitlementsWithHttpInfo(List<EntitlementSpec> body);
         /// <summary>
         /// Delete the bulk entitlements for a set of application pools
         /// </summary>
@@ -75,7 +75,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be deleted.</param>
         /// <returns>List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        List<BulkEntitlementResponseInfo> BulkDeleteApplicationPoolEntitlements (List<EntitlementSpec> body);
+        List<BulkEntitlementResponseInfo> BulkDeleteApplicationPoolEntitlements(List<EntitlementSpec> body);
 
         /// <summary>
         /// Delete the bulk entitlements for a set of application pools
@@ -86,7 +86,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be deleted.</param>
         /// <returns>ApiResponse of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        ApiResponse<List<BulkEntitlementResponseInfo>> BulkDeleteApplicationPoolEntitlementsWithHttpInfo (List<EntitlementSpec> body);
+        ApiResponse<List<BulkEntitlementResponseInfo>> BulkDeleteApplicationPoolEntitlementsWithHttpInfo(List<EntitlementSpec> body);
         /// <summary>
         /// Delete the bulk entitlements for a set of desktop pools
         /// </summary>
@@ -96,7 +96,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be deleted.</param>
         /// <returns>List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        List<BulkEntitlementResponseInfo> BulkDeleteDesktopPoolEntitlements (List<EntitlementSpec> body);
+        List<BulkEntitlementResponseInfo> BulkDeleteDesktopPoolEntitlements(List<EntitlementSpec> body);
 
         /// <summary>
         /// Delete the bulk entitlements for a set of desktop pools
@@ -107,7 +107,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be deleted.</param>
         /// <returns>ApiResponse of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        ApiResponse<List<BulkEntitlementResponseInfo>> BulkDeleteDesktopPoolEntitlementsWithHttpInfo (List<EntitlementSpec> body);
+        ApiResponse<List<BulkEntitlementResponseInfo>> BulkDeleteDesktopPoolEntitlementsWithHttpInfo(List<EntitlementSpec> body);
         /// <summary>
         /// Returns the IDs of users or groups entitled to a given application pool.
         /// </summary>
@@ -117,7 +117,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>EntitlementInfo</returns>
-        EntitlementInfo GetApplicationPoolEntitlements (string id);
+        EntitlementInfo GetApplicationPoolEntitlements(string id);
 
         /// <summary>
         /// Returns the IDs of users or groups entitled to a given application pool.
@@ -128,7 +128,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of EntitlementInfo</returns>
-        ApiResponse<EntitlementInfo> GetApplicationPoolEntitlementsWithHttpInfo (string id);
+        ApiResponse<EntitlementInfo> GetApplicationPoolEntitlementsWithHttpInfo(string id);
         /// <summary>
         /// Returns the IDs of users or groups entitled to a given desktop pool.
         /// </summary>
@@ -138,7 +138,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>EntitlementInfo</returns>
-        EntitlementInfo GetDesktopPoolEntitlements (string id);
+        EntitlementInfo GetDesktopPoolEntitlements(string id);
 
         /// <summary>
         /// Returns the IDs of users or groups entitled to a given desktop pool.
@@ -149,7 +149,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of EntitlementInfo</returns>
-        ApiResponse<EntitlementInfo> GetDesktopPoolEntitlementsWithHttpInfo (string id);
+        ApiResponse<EntitlementInfo> GetDesktopPoolEntitlementsWithHttpInfo(string id);
         /// <summary>
         /// Lists the entitlements for Application Pools in the environment.
         /// </summary>
@@ -158,7 +158,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;EntitlementInfo&gt;</returns>
-        List<EntitlementInfo> ListApplicationPoolEntitlements ();
+        List<EntitlementInfo> ListApplicationPoolEntitlements(CustomModel.Pagination Pagination = null, string filter = null);
 
         /// <summary>
         /// Lists the entitlements for Application Pools in the environment.
@@ -168,7 +168,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;EntitlementInfo&gt;</returns>
-        ApiResponse<List<EntitlementInfo>> ListApplicationPoolEntitlementsWithHttpInfo ();
+        ApiResponse<List<EntitlementInfo>> ListApplicationPoolEntitlementsWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null);
         /// <summary>
         /// Lists the entitlements for Desktop Pools in the environment.
         /// </summary>
@@ -177,7 +177,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;EntitlementInfo&gt;</returns>
-        List<EntitlementInfo> ListDesktopPoolEntitlements ();
+        List<EntitlementInfo> ListDesktopPoolEntitlements(CustomModel.Pagination Pagination = null, string filter = null);
 
         /// <summary>
         /// Lists the entitlements for Desktop Pools in the environment.
@@ -187,7 +187,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;EntitlementInfo&gt;</returns>
-        ApiResponse<List<EntitlementInfo>> ListDesktopPoolEntitlementsWithHttpInfo ();
+        ApiResponse<List<EntitlementInfo>> ListDesktopPoolEntitlementsWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -199,7 +199,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be created.</param>
         /// <returns>Task of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkCreateApplicationPoolEntitlementsAsync (List<EntitlementSpec> body);
+        System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkCreateApplicationPoolEntitlementsAsync(List<EntitlementSpec> body);
 
         /// <summary>
         /// Create the bulk entitlements for a set of application pools
@@ -210,7 +210,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be created.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkEntitlementResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkCreateApplicationPoolEntitlementsAsyncWithHttpInfo (List<EntitlementSpec> body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkCreateApplicationPoolEntitlementsAsyncWithHttpInfo(List<EntitlementSpec> body);
         /// <summary>
         /// Create the bulk entitlements for a set of desktop pools
         /// </summary>
@@ -220,7 +220,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be created.</param>
         /// <returns>Task of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkCreateDesktopPoolEntitlementsAsync (List<EntitlementSpec> body);
+        System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkCreateDesktopPoolEntitlementsAsync(List<EntitlementSpec> body);
 
         /// <summary>
         /// Create the bulk entitlements for a set of desktop pools
@@ -231,7 +231,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be created.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkEntitlementResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkCreateDesktopPoolEntitlementsAsyncWithHttpInfo (List<EntitlementSpec> body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkCreateDesktopPoolEntitlementsAsyncWithHttpInfo(List<EntitlementSpec> body);
         /// <summary>
         /// Delete the bulk entitlements for a set of application pools
         /// </summary>
@@ -241,7 +241,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be deleted.</param>
         /// <returns>Task of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkDeleteApplicationPoolEntitlementsAsync (List<EntitlementSpec> body);
+        System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkDeleteApplicationPoolEntitlementsAsync(List<EntitlementSpec> body);
 
         /// <summary>
         /// Delete the bulk entitlements for a set of application pools
@@ -252,7 +252,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be deleted.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkEntitlementResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkDeleteApplicationPoolEntitlementsAsyncWithHttpInfo (List<EntitlementSpec> body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkDeleteApplicationPoolEntitlementsAsyncWithHttpInfo(List<EntitlementSpec> body);
         /// <summary>
         /// Delete the bulk entitlements for a set of desktop pools
         /// </summary>
@@ -262,7 +262,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be deleted.</param>
         /// <returns>Task of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkDeleteDesktopPoolEntitlementsAsync (List<EntitlementSpec> body);
+        System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkDeleteDesktopPoolEntitlementsAsync(List<EntitlementSpec> body);
 
         /// <summary>
         /// Delete the bulk entitlements for a set of desktop pools
@@ -273,7 +273,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be deleted.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkEntitlementResponseInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkDeleteDesktopPoolEntitlementsAsyncWithHttpInfo (List<EntitlementSpec> body);
+        System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkDeleteDesktopPoolEntitlementsAsyncWithHttpInfo(List<EntitlementSpec> body);
         /// <summary>
         /// Returns the IDs of users or groups entitled to a given application pool.
         /// </summary>
@@ -283,7 +283,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of EntitlementInfo</returns>
-        System.Threading.Tasks.Task<EntitlementInfo> GetApplicationPoolEntitlementsAsync (string id);
+        System.Threading.Tasks.Task<EntitlementInfo> GetApplicationPoolEntitlementsAsync(string id);
 
         /// <summary>
         /// Returns the IDs of users or groups entitled to a given application pool.
@@ -294,7 +294,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (EntitlementInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EntitlementInfo>> GetApplicationPoolEntitlementsAsyncWithHttpInfo (string id);
+        System.Threading.Tasks.Task<ApiResponse<EntitlementInfo>> GetApplicationPoolEntitlementsAsyncWithHttpInfo(string id);
         /// <summary>
         /// Returns the IDs of users or groups entitled to a given desktop pool.
         /// </summary>
@@ -304,7 +304,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of EntitlementInfo</returns>
-        System.Threading.Tasks.Task<EntitlementInfo> GetDesktopPoolEntitlementsAsync (string id);
+        System.Threading.Tasks.Task<EntitlementInfo> GetDesktopPoolEntitlementsAsync(string id);
 
         /// <summary>
         /// Returns the IDs of users or groups entitled to a given desktop pool.
@@ -315,7 +315,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (EntitlementInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EntitlementInfo>> GetDesktopPoolEntitlementsAsyncWithHttpInfo (string id);
+        System.Threading.Tasks.Task<ApiResponse<EntitlementInfo>> GetDesktopPoolEntitlementsAsyncWithHttpInfo(string id);
         /// <summary>
         /// Lists the entitlements for Application Pools in the environment.
         /// </summary>
@@ -324,7 +324,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;EntitlementInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<EntitlementInfo>> ListApplicationPoolEntitlementsAsync ();
+        System.Threading.Tasks.Task<List<EntitlementInfo>> ListApplicationPoolEntitlementsAsync(CustomModel.Pagination Pagination = null, string filter = null);
 
         /// <summary>
         /// Lists the entitlements for Application Pools in the environment.
@@ -334,7 +334,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;EntitlementInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EntitlementInfo>>> ListApplicationPoolEntitlementsAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<EntitlementInfo>>> ListApplicationPoolEntitlementsAsyncWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null);
         /// <summary>
         /// Lists the entitlements for Desktop Pools in the environment.
         /// </summary>
@@ -343,7 +343,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;EntitlementInfo&gt;</returns>
-        System.Threading.Tasks.Task<List<EntitlementInfo>> ListDesktopPoolEntitlementsAsync ();
+        System.Threading.Tasks.Task<List<EntitlementInfo>> ListDesktopPoolEntitlementsAsync(CustomModel.Pagination Pagination = null, string filter = null);
 
         /// <summary>
         /// Lists the entitlements for Desktop Pools in the environment.
@@ -353,7 +353,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </remarks>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;EntitlementInfo&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EntitlementInfo>>> ListDesktopPoolEntitlementsAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<EntitlementInfo>>> ListDesktopPoolEntitlementsAsyncWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null);
         #endregion Asynchronous Operations
     }
 
@@ -414,7 +414,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public VMware.Horizon.RESTAPI.Client.Configuration Configuration {get; set;}
+        public VMware.Horizon.RESTAPI.Client.Configuration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -460,10 +460,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be created.</param>
         /// <returns>List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        public List<BulkEntitlementResponseInfo> BulkCreateApplicationPoolEntitlements (List<EntitlementSpec> body)
+        public List<BulkEntitlementResponseInfo> BulkCreateApplicationPoolEntitlements(List<EntitlementSpec> body)
         {
-             ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = BulkCreateApplicationPoolEntitlementsWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = BulkCreateApplicationPoolEntitlementsWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -472,7 +472,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be created.</param>
         /// <returns>ApiResponse of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkEntitlementResponseInfo> > BulkCreateApplicationPoolEntitlementsWithHttpInfo (List<EntitlementSpec> body)
+        public ApiResponse<List<BulkEntitlementResponseInfo>> BulkCreateApplicationPoolEntitlementsWithHttpInfo(List<EntitlementSpec> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -516,11 +516,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -530,7 +530,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkEntitlementResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkEntitlementResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
+                (List<BulkEntitlementResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
         }
 
         /// <summary>
@@ -539,10 +539,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be created.</param>
         /// <returns>Task of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkCreateApplicationPoolEntitlementsAsync (List<EntitlementSpec> body)
+        public async System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkCreateApplicationPoolEntitlementsAsync(List<EntitlementSpec> body)
         {
-             ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = await BulkCreateApplicationPoolEntitlementsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = await BulkCreateApplicationPoolEntitlementsAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -552,7 +552,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be created.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkEntitlementResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkCreateApplicationPoolEntitlementsAsyncWithHttpInfo (List<EntitlementSpec> body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkCreateApplicationPoolEntitlementsAsyncWithHttpInfo(List<EntitlementSpec> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -596,11 +596,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -610,7 +610,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkEntitlementResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkEntitlementResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
+                (List<BulkEntitlementResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
         }
 
         /// <summary>
@@ -619,10 +619,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be created.</param>
         /// <returns>List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        public List<BulkEntitlementResponseInfo> BulkCreateDesktopPoolEntitlements (List<EntitlementSpec> body)
+        public List<BulkEntitlementResponseInfo> BulkCreateDesktopPoolEntitlements(List<EntitlementSpec> body)
         {
-             ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = BulkCreateDesktopPoolEntitlementsWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = BulkCreateDesktopPoolEntitlementsWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -631,7 +631,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be created.</param>
         /// <returns>ApiResponse of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkEntitlementResponseInfo> > BulkCreateDesktopPoolEntitlementsWithHttpInfo (List<EntitlementSpec> body)
+        public ApiResponse<List<BulkEntitlementResponseInfo>> BulkCreateDesktopPoolEntitlementsWithHttpInfo(List<EntitlementSpec> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -675,11 +675,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -689,7 +689,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkEntitlementResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkEntitlementResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
+                (List<BulkEntitlementResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
         }
 
         /// <summary>
@@ -698,10 +698,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be created.</param>
         /// <returns>Task of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkCreateDesktopPoolEntitlementsAsync (List<EntitlementSpec> body)
+        public async System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkCreateDesktopPoolEntitlementsAsync(List<EntitlementSpec> body)
         {
-             ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = await BulkCreateDesktopPoolEntitlementsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = await BulkCreateDesktopPoolEntitlementsAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -711,7 +711,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be created.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkEntitlementResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkCreateDesktopPoolEntitlementsAsyncWithHttpInfo (List<EntitlementSpec> body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkCreateDesktopPoolEntitlementsAsyncWithHttpInfo(List<EntitlementSpec> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -755,11 +755,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -769,7 +769,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkEntitlementResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkEntitlementResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
+                (List<BulkEntitlementResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
         }
 
         /// <summary>
@@ -778,10 +778,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be deleted.</param>
         /// <returns>List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        public List<BulkEntitlementResponseInfo> BulkDeleteApplicationPoolEntitlements (List<EntitlementSpec> body)
+        public List<BulkEntitlementResponseInfo> BulkDeleteApplicationPoolEntitlements(List<EntitlementSpec> body)
         {
-             ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = BulkDeleteApplicationPoolEntitlementsWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = BulkDeleteApplicationPoolEntitlementsWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -790,7 +790,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be deleted.</param>
         /// <returns>ApiResponse of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkEntitlementResponseInfo> > BulkDeleteApplicationPoolEntitlementsWithHttpInfo (List<EntitlementSpec> body)
+        public ApiResponse<List<BulkEntitlementResponseInfo>> BulkDeleteApplicationPoolEntitlementsWithHttpInfo(List<EntitlementSpec> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -833,11 +833,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -847,7 +847,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkEntitlementResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkEntitlementResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
+                (List<BulkEntitlementResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
         }
 
         /// <summary>
@@ -856,10 +856,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be deleted.</param>
         /// <returns>Task of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkDeleteApplicationPoolEntitlementsAsync (List<EntitlementSpec> body)
+        public async System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkDeleteApplicationPoolEntitlementsAsync(List<EntitlementSpec> body)
         {
-             ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = await BulkDeleteApplicationPoolEntitlementsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = await BulkDeleteApplicationPoolEntitlementsAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -869,7 +869,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk application entitlements to be deleted.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkEntitlementResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkDeleteApplicationPoolEntitlementsAsyncWithHttpInfo (List<EntitlementSpec> body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkDeleteApplicationPoolEntitlementsAsyncWithHttpInfo(List<EntitlementSpec> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -912,11 +912,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -926,7 +926,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkEntitlementResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkEntitlementResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
+                (List<BulkEntitlementResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
         }
 
         /// <summary>
@@ -935,10 +935,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be deleted.</param>
         /// <returns>List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        public List<BulkEntitlementResponseInfo> BulkDeleteDesktopPoolEntitlements (List<EntitlementSpec> body)
+        public List<BulkEntitlementResponseInfo> BulkDeleteDesktopPoolEntitlements(List<EntitlementSpec> body)
         {
-             ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = BulkDeleteDesktopPoolEntitlementsWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = BulkDeleteDesktopPoolEntitlementsWithHttpInfo(body);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -947,7 +947,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be deleted.</param>
         /// <returns>ApiResponse of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        public ApiResponse< List<BulkEntitlementResponseInfo> > BulkDeleteDesktopPoolEntitlementsWithHttpInfo (List<EntitlementSpec> body)
+        public ApiResponse<List<BulkEntitlementResponseInfo>> BulkDeleteDesktopPoolEntitlementsWithHttpInfo(List<EntitlementSpec> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -990,11 +990,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1004,7 +1004,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkEntitlementResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkEntitlementResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
+                (List<BulkEntitlementResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
         }
 
         /// <summary>
@@ -1013,10 +1013,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be deleted.</param>
         /// <returns>Task of List&lt;BulkEntitlementResponseInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkDeleteDesktopPoolEntitlementsAsync (List<EntitlementSpec> body)
+        public async System.Threading.Tasks.Task<List<BulkEntitlementResponseInfo>> BulkDeleteDesktopPoolEntitlementsAsync(List<EntitlementSpec> body)
         {
-             ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = await BulkDeleteDesktopPoolEntitlementsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
+            ApiResponse<List<BulkEntitlementResponseInfo>> localVarResponse = await BulkDeleteDesktopPoolEntitlementsAsyncWithHttpInfo(body);
+            return localVarResponse.Data;
 
         }
 
@@ -1026,7 +1026,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Specifications for bulk desktop entitlements to be deleted.</param>
         /// <returns>Task of ApiResponse (List&lt;BulkEntitlementResponseInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkDeleteDesktopPoolEntitlementsAsyncWithHttpInfo (List<EntitlementSpec> body)
+        public async System.Threading.Tasks.Task<ApiResponse<List<BulkEntitlementResponseInfo>>> BulkDeleteDesktopPoolEntitlementsAsyncWithHttpInfo(List<EntitlementSpec> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1069,11 +1069,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1083,7 +1083,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<BulkEntitlementResponseInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<BulkEntitlementResponseInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
+                (List<BulkEntitlementResponseInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BulkEntitlementResponseInfo>)));
         }
 
         /// <summary>
@@ -1092,10 +1092,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>EntitlementInfo</returns>
-        public EntitlementInfo GetApplicationPoolEntitlements (string id)
+        public EntitlementInfo GetApplicationPoolEntitlements(string id)
         {
-             ApiResponse<EntitlementInfo> localVarResponse = GetApplicationPoolEntitlementsWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<EntitlementInfo> localVarResponse = GetApplicationPoolEntitlementsWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1104,7 +1104,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of EntitlementInfo</returns>
-        public ApiResponse< EntitlementInfo > GetApplicationPoolEntitlementsWithHttpInfo (string id)
+        public ApiResponse<EntitlementInfo> GetApplicationPoolEntitlementsWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1140,11 +1140,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1154,7 +1154,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<EntitlementInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (EntitlementInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntitlementInfo)));
+                (EntitlementInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntitlementInfo)));
         }
 
         /// <summary>
@@ -1163,10 +1163,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of EntitlementInfo</returns>
-        public async System.Threading.Tasks.Task<EntitlementInfo> GetApplicationPoolEntitlementsAsync (string id)
+        public async System.Threading.Tasks.Task<EntitlementInfo> GetApplicationPoolEntitlementsAsync(string id)
         {
-             ApiResponse<EntitlementInfo> localVarResponse = await GetApplicationPoolEntitlementsAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<EntitlementInfo> localVarResponse = await GetApplicationPoolEntitlementsAsyncWithHttpInfo(id);
+            return localVarResponse.Data;
 
         }
 
@@ -1176,7 +1176,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (EntitlementInfo)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EntitlementInfo>> GetApplicationPoolEntitlementsAsyncWithHttpInfo (string id)
+        public async System.Threading.Tasks.Task<ApiResponse<EntitlementInfo>> GetApplicationPoolEntitlementsAsyncWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1212,11 +1212,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1226,7 +1226,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<EntitlementInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (EntitlementInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntitlementInfo)));
+                (EntitlementInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntitlementInfo)));
         }
 
         /// <summary>
@@ -1235,10 +1235,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>EntitlementInfo</returns>
-        public EntitlementInfo GetDesktopPoolEntitlements (string id)
+        public EntitlementInfo GetDesktopPoolEntitlements(string id)
         {
-             ApiResponse<EntitlementInfo> localVarResponse = GetDesktopPoolEntitlementsWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<EntitlementInfo> localVarResponse = GetDesktopPoolEntitlementsWithHttpInfo(id);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1247,7 +1247,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>ApiResponse of EntitlementInfo</returns>
-        public ApiResponse< EntitlementInfo > GetDesktopPoolEntitlementsWithHttpInfo (string id)
+        public ApiResponse<EntitlementInfo> GetDesktopPoolEntitlementsWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1283,11 +1283,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1297,7 +1297,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<EntitlementInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (EntitlementInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntitlementInfo)));
+                (EntitlementInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntitlementInfo)));
         }
 
         /// <summary>
@@ -1306,10 +1306,10 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of EntitlementInfo</returns>
-        public async System.Threading.Tasks.Task<EntitlementInfo> GetDesktopPoolEntitlementsAsync (string id)
+        public async System.Threading.Tasks.Task<EntitlementInfo> GetDesktopPoolEntitlementsAsync(string id)
         {
-             ApiResponse<EntitlementInfo> localVarResponse = await GetDesktopPoolEntitlementsAsyncWithHttpInfo(id);
-             return localVarResponse.Data;
+            ApiResponse<EntitlementInfo> localVarResponse = await GetDesktopPoolEntitlementsAsyncWithHttpInfo(id);
+            return localVarResponse.Data;
 
         }
 
@@ -1319,7 +1319,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id</param>
         /// <returns>Task of ApiResponse (EntitlementInfo)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EntitlementInfo>> GetDesktopPoolEntitlementsAsyncWithHttpInfo (string id)
+        public async System.Threading.Tasks.Task<ApiResponse<EntitlementInfo>> GetDesktopPoolEntitlementsAsyncWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1355,11 +1355,11 @@ namespace VMware.Horizon.RESTAPI.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1369,7 +1369,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<EntitlementInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (EntitlementInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntitlementInfo)));
+                (EntitlementInfo)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EntitlementInfo)));
         }
 
         /// <summary>
@@ -1377,10 +1377,35 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;EntitlementInfo&gt;</returns>
-        public List<EntitlementInfo> ListApplicationPoolEntitlements ()
+        public List<EntitlementInfo> ListApplicationPoolEntitlements(CustomModel.Pagination Pagination = null, string filter = null)
         {
-             ApiResponse<List<EntitlementInfo>> localVarResponse = ListApplicationPoolEntitlementsWithHttpInfo();
-             return localVarResponse.Data;
+
+            List<EntitlementInfo> ReturnValue = new List<EntitlementInfo>();
+            Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+            while (true)
+            {
+                ApiResponse<List<EntitlementInfo>> localVarResponse = ListApplicationPoolEntitlementsWithHttpInfo(Pagination, filter);
+
+
+
+                ReturnValue.AddRange(localVarResponse.Data);
+
+                if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                {
+                    break;
+                }
+                else
+                {
+                    Pagination.page += 1;
+                }
+
+
+            }
+            return ReturnValue;
+
+            //ApiResponse<List<EntitlementInfo>> localVarResponse = ListApplicationPoolEntitlementsWithHttpInfo(Pagination,filter);
+            // return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1388,7 +1413,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;EntitlementInfo&gt;</returns>
-        public ApiResponse< List<EntitlementInfo> > ListApplicationPoolEntitlementsWithHttpInfo ()
+        public ApiResponse<List<EntitlementInfo>> ListApplicationPoolEntitlementsWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null)
         {
 
             var localVarPath = "./entitlements/v1/application-pools";
@@ -1419,12 +1444,23 @@ namespace VMware.Horizon.RESTAPI.Api
                 localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
             }
 
+            if (!string.IsNullOrEmpty(filter))
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter));
+            }
+
+            if (Pagination != null)
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", Pagination.page));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "size", Pagination.size));
+            }
+
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1434,7 +1470,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<EntitlementInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<EntitlementInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EntitlementInfo>)));
+                (List<EntitlementInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EntitlementInfo>)));
         }
 
         /// <summary>
@@ -1442,10 +1478,33 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;EntitlementInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EntitlementInfo>> ListApplicationPoolEntitlementsAsync ()
+        public async System.Threading.Tasks.Task<List<EntitlementInfo>> ListApplicationPoolEntitlementsAsync(CustomModel.Pagination Pagination = null, string filter = null)
         {
-             ApiResponse<List<EntitlementInfo>> localVarResponse = await ListApplicationPoolEntitlementsAsyncWithHttpInfo();
-             return localVarResponse.Data;
+            List<EntitlementInfo> ReturnValue = new List<EntitlementInfo>();
+            Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+            while (true)
+            {
+                ApiResponse<List<EntitlementInfo>> localVarResponse = await ListApplicationPoolEntitlementsAsyncWithHttpInfo(Pagination, filter);
+
+                lock (ReturnValue)
+                {
+                    ReturnValue.AddRange(localVarResponse.Data);
+
+                    if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Pagination.page += 1;
+                    }
+                }
+            }
+            return ReturnValue;
+
+            //ApiResponse<List<EntitlementInfo>> localVarResponse = await ListApplicationPoolEntitlementsAsyncWithHttpInfo(Pagination, filter);
+            //return localVarResponse.Data;
 
         }
 
@@ -1454,7 +1513,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;EntitlementInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<EntitlementInfo>>> ListApplicationPoolEntitlementsAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<List<EntitlementInfo>>> ListApplicationPoolEntitlementsAsyncWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null)
         {
 
             var localVarPath = "./entitlements/v1/application-pools";
@@ -1485,12 +1544,23 @@ namespace VMware.Horizon.RESTAPI.Api
                 localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
             }
 
+            if (!string.IsNullOrEmpty(filter))
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter));
+            }
+
+            if (Pagination != null)
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", Pagination.page));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "size", Pagination.size));
+            }
+
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1500,7 +1570,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<EntitlementInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<EntitlementInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EntitlementInfo>)));
+                (List<EntitlementInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EntitlementInfo>)));
         }
 
         /// <summary>
@@ -1508,10 +1578,32 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;EntitlementInfo&gt;</returns>
-        public List<EntitlementInfo> ListDesktopPoolEntitlements ()
+        public List<EntitlementInfo> ListDesktopPoolEntitlements(CustomModel.Pagination Pagination = null, string filter = null)
         {
-             ApiResponse<List<EntitlementInfo>> localVarResponse = ListDesktopPoolEntitlementsWithHttpInfo();
-             return localVarResponse.Data;
+            List<EntitlementInfo> ReturnValue = new List<EntitlementInfo>();
+            Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+            while (true)
+            {
+                ApiResponse<List<EntitlementInfo>> localVarResponse = ListDesktopPoolEntitlementsWithHttpInfo(Pagination, filter);
+
+
+                ReturnValue.AddRange(localVarResponse.Data);
+
+                if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                {
+                    break;
+                }
+                else
+                {
+                    Pagination.page += 1;
+                }
+
+            }
+            return ReturnValue;
+
+            //ApiResponse<List<EntitlementInfo>> localVarResponse = ListDesktopPoolEntitlementsWithHttpInfo();
+            //  return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1519,7 +1611,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;EntitlementInfo&gt;</returns>
-        public ApiResponse< List<EntitlementInfo> > ListDesktopPoolEntitlementsWithHttpInfo ()
+        public ApiResponse<List<EntitlementInfo>> ListDesktopPoolEntitlementsWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null)
         {
 
             var localVarPath = "./entitlements/v1/desktop-pools";
@@ -1550,12 +1642,23 @@ namespace VMware.Horizon.RESTAPI.Api
                 localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
             }
 
+            if (!string.IsNullOrEmpty(filter))
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter));
+            }
+
+            if (Pagination != null)
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", Pagination.page));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "size", Pagination.size));
+            }
+
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1565,7 +1668,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<EntitlementInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<EntitlementInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EntitlementInfo>)));
+                (List<EntitlementInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EntitlementInfo>)));
         }
 
         /// <summary>
@@ -1573,10 +1676,29 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;EntitlementInfo&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EntitlementInfo>> ListDesktopPoolEntitlementsAsync ()
+        public async System.Threading.Tasks.Task<List<EntitlementInfo>> ListDesktopPoolEntitlementsAsync(CustomModel.Pagination Pagination = null, string filter = null)
         {
-             ApiResponse<List<EntitlementInfo>> localVarResponse = await ListDesktopPoolEntitlementsAsyncWithHttpInfo();
-             return localVarResponse.Data;
+            List<EntitlementInfo> ReturnValue = new List<EntitlementInfo>();
+            Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+            while (true)
+            {
+                ApiResponse<List<EntitlementInfo>> localVarResponse = await ListDesktopPoolEntitlementsAsyncWithHttpInfo(Pagination, filter);
+
+                ReturnValue.AddRange(localVarResponse.Data);
+
+                if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                {
+                    break;
+                }
+                else
+                {
+                    Pagination.page += 1;
+                }
+            }
+            return ReturnValue;
+            //ApiResponse<List<EntitlementInfo>> localVarResponse = await ListDesktopPoolEntitlementsAsyncWithHttpInfo();
+            // return localVarResponse.Data;
 
         }
 
@@ -1585,7 +1707,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// </summary>
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;EntitlementInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<EntitlementInfo>>> ListDesktopPoolEntitlementsAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<List<EntitlementInfo>>> ListDesktopPoolEntitlementsAsyncWithHttpInfo(CustomModel.Pagination Pagination = null, string filter = null)
         {
 
             var localVarPath = "./entitlements/v1/desktop-pools";
@@ -1616,12 +1738,23 @@ namespace VMware.Horizon.RESTAPI.Api
                 localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
             }
 
+            if (!string.IsNullOrEmpty(filter))
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter));
+            }
+
+            if (Pagination != null)
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", Pagination.page));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "size", Pagination.size));
+            }
+
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -1631,7 +1764,7 @@ namespace VMware.Horizon.RESTAPI.Api
 
             return new ApiResponse<List<EntitlementInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<EntitlementInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EntitlementInfo>)));
+                (List<EntitlementInfo>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EntitlementInfo>)));
         }
 
     }

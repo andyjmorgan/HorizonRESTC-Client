@@ -94,7 +94,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupOnly">Presence of this query param indicates to filter only groups or only users.   If passed as \&quot;true\&quot;, then only groups are returned.  If passed as \&quot;false\&quot;, then only users are returned.  If not passed passed at all, then both types are returned. (optional)</param>
         /// <returns>List&lt;ADUserOrGroupSummary&gt;</returns>
-        List<ADUserOrGroupSummary> ListADUserOrGroupSummary (string groupOnly = null);
+        List<ADUserOrGroupSummary> ListADUserOrGroupSummary (string groupOnly = null, CustomModel.Pagination Pagination = null, string filter = null);
 
         /// <summary>
         /// Lists AD users or groups information.
@@ -105,7 +105,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupOnly">Presence of this query param indicates to filter only groups or only users.   If passed as \&quot;true\&quot;, then only groups are returned.  If passed as \&quot;false\&quot;, then only users are returned.  If not passed passed at all, then both types are returned. (optional)</param>
         /// <returns>ApiResponse of List&lt;ADUserOrGroupSummary&gt;</returns>
-        ApiResponse<List<ADUserOrGroupSummary>> ListADUserOrGroupSummaryWithHttpInfo (string groupOnly = null);
+        ApiResponse<List<ADUserOrGroupSummary>> ListADUserOrGroupSummaryWithHttpInfo (string groupOnly = null, CustomModel.Pagination Pagination = null, string filter = null);
         /// <summary>
         /// Lists all the VM snapshots from the vCenter for a given VM.
         /// </summary>
@@ -477,7 +477,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupOnly">Presence of this query param indicates to filter only groups or only users.   If passed as \&quot;true\&quot;, then only groups are returned.  If passed as \&quot;false\&quot;, then only users are returned.  If not passed passed at all, then both types are returned. (optional)</param>
         /// <returns>Task of List&lt;ADUserOrGroupSummary&gt;</returns>
-        System.Threading.Tasks.Task<List<ADUserOrGroupSummary>> ListADUserOrGroupSummaryAsync (string groupOnly = null);
+        System.Threading.Tasks.Task<List<ADUserOrGroupSummary>> ListADUserOrGroupSummaryAsync (string groupOnly = null, CustomModel.Pagination Pagination = null, string filter = null);
 
         /// <summary>
         /// Lists AD users or groups information.
@@ -488,7 +488,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupOnly">Presence of this query param indicates to filter only groups or only users.   If passed as \&quot;true\&quot;, then only groups are returned.  If passed as \&quot;false\&quot;, then only users are returned.  If not passed passed at all, then both types are returned. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;ADUserOrGroupSummary&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ADUserOrGroupSummary>>> ListADUserOrGroupSummaryAsyncWithHttpInfo (string groupOnly = null);
+        System.Threading.Tasks.Task<ApiResponse<List<ADUserOrGroupSummary>>> ListADUserOrGroupSummaryAsyncWithHttpInfo (string groupOnly = null, CustomModel.Pagination Pagination = null, string filter = null);
         /// <summary>
         /// Lists all the VM snapshots from the vCenter for a given VM.
         /// </summary>
@@ -1327,10 +1327,31 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupOnly">Presence of this query param indicates to filter only groups or only users.   If passed as \&quot;true\&quot;, then only groups are returned.  If passed as \&quot;false\&quot;, then only users are returned.  If not passed passed at all, then both types are returned. (optional)</param>
         /// <returns>List&lt;ADUserOrGroupSummary&gt;</returns>
-        public List<ADUserOrGroupSummary> ListADUserOrGroupSummary (string groupOnly = null)
+        public List<ADUserOrGroupSummary> ListADUserOrGroupSummary(string groupOnly = null, CustomModel.Pagination Pagination = null, string filter = null)
         {
-             ApiResponse<List<ADUserOrGroupSummary>> localVarResponse = ListADUserOrGroupSummaryWithHttpInfo(groupOnly);
-             return localVarResponse.Data;
+
+            List<ADUserOrGroupSummary> ReturnValue = new List<ADUserOrGroupSummary>();
+            Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+            while (true)
+            {
+                ApiResponse<List<ADUserOrGroupSummary>> localVarResponse = ListADUserOrGroupSummaryWithHttpInfo(groupOnly, Pagination, filter);
+
+                ReturnValue.AddRange(localVarResponse.Data);
+
+                if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                {
+                    break;
+                }
+                else
+                {
+                    Pagination.page += 1;
+                }
+            }
+            return ReturnValue;
+
+            //ApiResponse<List<ADUserOrGroupSummary>> localVarResponse = ListADUserOrGroupSummaryWithHttpInfo(groupOnly,Pagination,filter);
+            // return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1339,7 +1360,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupOnly">Presence of this query param indicates to filter only groups or only users.   If passed as \&quot;true\&quot;, then only groups are returned.  If passed as \&quot;false\&quot;, then only users are returned.  If not passed passed at all, then both types are returned. (optional)</param>
         /// <returns>ApiResponse of List&lt;ADUserOrGroupSummary&gt;</returns>
-        public ApiResponse< List<ADUserOrGroupSummary> > ListADUserOrGroupSummaryWithHttpInfo (string groupOnly = null)
+        public ApiResponse< List<ADUserOrGroupSummary> > ListADUserOrGroupSummaryWithHttpInfo (string groupOnly = null, CustomModel.Pagination Pagination = null, string filter = null)
         {
 
             var localVarPath = "./external/v1/ad-users-or-groups";
@@ -1363,13 +1384,27 @@ namespace VMware.Horizon.RESTAPI.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+
             if (groupOnly != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "group_only", groupOnly)); // query parameter
+
 
             // authentication (Bearer) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
             }
+
+            if (!string.IsNullOrEmpty(filter))
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter));
+            }
+
+            if (Pagination != null)
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", Pagination.page));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "size", Pagination.size));
+            }
+
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
@@ -1395,11 +1430,32 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupOnly">Presence of this query param indicates to filter only groups or only users.   If passed as \&quot;true\&quot;, then only groups are returned.  If passed as \&quot;false\&quot;, then only users are returned.  If not passed passed at all, then both types are returned. (optional)</param>
         /// <returns>Task of List&lt;ADUserOrGroupSummary&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ADUserOrGroupSummary>> ListADUserOrGroupSummaryAsync (string groupOnly = null)
+        public async System.Threading.Tasks.Task<List<ADUserOrGroupSummary>> ListADUserOrGroupSummaryAsync (string groupOnly = null, CustomModel.Pagination Pagination = null, string filter = null)
         {
-             ApiResponse<List<ADUserOrGroupSummary>> localVarResponse = await ListADUserOrGroupSummaryAsyncWithHttpInfo(groupOnly);
-             return localVarResponse.Data;
+            List<ADUserOrGroupSummary> ReturnValue = new List<ADUserOrGroupSummary>();
+            Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
 
+            while (true)
+            {
+                ApiResponse<List<ADUserOrGroupSummary>> localVarResponse = await ListADUserOrGroupSummaryAsyncWithHttpInfo(groupOnly, Pagination, filter);
+
+                 lock (ReturnValue)
+                {
+                    ReturnValue.AddRange(localVarResponse.Data);
+
+                    if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Pagination.page += 1;
+                    }
+                }
+            }
+            return ReturnValue;
+            //ApiResponse<List<ADUserOrGroupSummary>> localVarResponse = await ListADUserOrGroupSummaryAsyncWithHttpInfo(groupOnly);
+             //return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1408,7 +1464,7 @@ namespace VMware.Horizon.RESTAPI.Api
         /// <exception cref="VMware.Horizon.RESTAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupOnly">Presence of this query param indicates to filter only groups or only users.   If passed as \&quot;true\&quot;, then only groups are returned.  If passed as \&quot;false\&quot;, then only users are returned.  If not passed passed at all, then both types are returned. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;ADUserOrGroupSummary&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<ADUserOrGroupSummary>>> ListADUserOrGroupSummaryAsyncWithHttpInfo (string groupOnly = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<ADUserOrGroupSummary>>> ListADUserOrGroupSummaryAsyncWithHttpInfo (string groupOnly = null, CustomModel.Pagination Pagination = null, string filter = null)
         {
 
             var localVarPath = "./external/v1/ad-users-or-groups";
@@ -1438,6 +1494,17 @@ namespace VMware.Horizon.RESTAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            if (!string.IsNullOrEmpty(filter))
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter));
+            }
+
+            if (Pagination != null)
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", Pagination.page));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "size", Pagination.size));
             }
 
             // make the HTTP request

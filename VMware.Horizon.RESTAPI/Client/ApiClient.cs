@@ -39,6 +39,7 @@ namespace VMware.Horizon.RESTAPI.Client
         /// <param name="request">The RestSharp request object</param>
         partial void InterceptRequest(IRestRequest request);
 
+
         /// <summary>
         /// Allows for extending response processing for <see cref="ApiClient"/> generated code.
         /// </summary>
@@ -57,6 +58,7 @@ namespace VMware.Horizon.RESTAPI.Client
             RestClient.IgnoreResponseStatusCode = true;
         }
 
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
         /// with default base path (https://localhost/rest).
@@ -65,9 +67,8 @@ namespace VMware.Horizon.RESTAPI.Client
         public ApiClient(Configuration config)
         {
             Configuration = config ?? VMware.Horizon.RESTAPI.Client.Configuration.Default;
-
             RestClient = new RestClient(Configuration.BasePath);
-            RestClient.IgnoreResponseStatusCode = true;
+            RestClient.IgnoreResponseStatusCode = true;           
         }
 
         /// <summary>

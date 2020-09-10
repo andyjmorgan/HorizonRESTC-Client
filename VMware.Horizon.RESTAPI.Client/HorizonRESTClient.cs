@@ -37,7 +37,7 @@ namespace VMware.Horizon.RESTAPI.Client
                 password,
                 username
             ));
-            if (null == tokens || string.IsNullOrEmpty(tokens.AccessToken) || string.IsNullOrEmpty(tokens.RefreshToken))
+            if (string.IsNullOrEmpty(tokens?.AccessToken) || string.IsNullOrEmpty(tokens?.RefreshToken))
             {
                 throw new Exception("The tokens provided are empty or null");
             }
@@ -51,12 +51,7 @@ namespace VMware.Horizon.RESTAPI.Client
         public void RefreshToken()
         {
             AccessToken Token = Authentication.RefreshAccessToken(new RefreshToken(Tokens.RefreshToken));
-            if (Token == null)
-            {
-                throw new Exception("Access Token received was null or empty");
-            }
-
-            if (string.IsNullOrEmpty(Token._AccessToken))
+            if (string.IsNullOrEmpty(Token?._AccessToken))
             {
                 throw new Exception("Access Token received was null or empty");
             }
