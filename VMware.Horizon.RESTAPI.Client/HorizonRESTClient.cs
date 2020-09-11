@@ -63,5 +63,10 @@ namespace VMware.Horizon.RESTAPI.Client
         {
             Authentication.LogoutUser(new RefreshToken(Tokens.RefreshToken));
         }
+
+        public Uri GetConnectionURI()
+        {
+            return BaseURI;
+        } 
     }
 }

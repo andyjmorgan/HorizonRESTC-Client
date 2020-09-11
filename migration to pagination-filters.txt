@@ -1,5 +1,4 @@
-CustomModel.Pagination Pagination = null)
-        {
+
             List<SessionInfo> ReturnValue = new List<SessionInfo>();
             Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
 
@@ -19,6 +18,31 @@ CustomModel.Pagination Pagination = null)
                 }
             }
             return ReturnValue;
+
+
+/// async 
+
+
+            List<SessionInfo> ReturnValue = new List<SessionInfo>();
+            Pagination = CustomHelpers.PaginationHelpers.ValidatePagination(Pagination);
+
+            while (true)
+            {
+                ApiResponse<List<SessionInfo>> localVarResponse =  await ListSessionInfoWithHttpInfo(Pagination);
+
+                ReturnValue.AddRange(localVarResponse.Data);
+
+                if (!CustomHelpers.PaginationHelpers.HasMoreRecords(localVarResponse.Headers))
+                {
+                    break;
+                }
+                else
+                {
+                    Pagination.page += 1;
+                }
+            }
+            return ReturnValue;
+
 
 CustomModel.Pagination Pagination = null
 string filter=null
