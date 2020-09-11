@@ -22,17 +22,22 @@ namespace ExampleDashboard
         private async void tmrRefresh_Tick(object sender, EventArgs e)
         {
           
-
+            /// this is a bit overkill, but refresh token each poll
+            /// 
             SharedObjects._Client.RefreshToken();
+
+            /// pull the session table for updating the dashboards
             var sessions = await SharedObjects._Client.Inventory.ListSessionInfoAsync();
 
 
+            /// filter session state by type
             var Connected = sessions.Where(x => x.SessionState == VMware.Horizon.RESTAPI.Model.SessionInfo.SessionStateEnum.CONNECTED && x.IdleDuration <= 3).Count();
             var idle = sessions.Where(x => x.SessionState == VMware.Horizon.RESTAPI.Model.SessionInfo.SessionStateEnum.CONNECTED && x.IdleDuration > 3).Count();
             var Disconnected = sessions.Where(x => x.SessionState == VMware.Horizon.RESTAPI.Model.SessionInfo.SessionStateEnum.DISCONNECTED).Count();
             var Pending = sessions.Where(x => x.SessionState == VMware.Horizon.RESTAPI.Model.SessionInfo.SessionStateEnum.PENDING).Count();
 
 
+            /// filter sessions by session type
             var ApplicationSessions = sessions.Where(x => x.SessionType == VMware.Horizon.RESTAPI.Model.SessionInfo.SessionTypeEnum.APPLICATION).ToList();
             var DesktopSessions = sessions.Where(x => x.SessionType != VMware.Horizon.RESTAPI.Model.SessionInfo.SessionTypeEnum.APPLICATION).ToList();
 
@@ -54,6 +59,8 @@ namespace ExampleDashboard
             });
             pcSessionType.LegendLocation = LegendLocation.Bottom;
 
+
+            /// build to 5 views
             var Top5Desktops = DesktopSessions.GroupBy(x => x.DesktopPoolId).OrderByDescending(x => x.Count()).Take(5);
             var Top5Applications = ApplicationSessions.SelectMany(x => x.ApplicationNames).GroupBy(x => x).Select(group => new { count = group.Count(), key = group.Key }).OrderByDescending(x=> x.count).ToList();
             pcTop5Desktops.Series.Clear();

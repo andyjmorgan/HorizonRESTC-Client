@@ -17,12 +17,21 @@ namespace ExampleDashboard
             InitializeComponent();
         }
 
-        private void btnConnect_Click(object sender, EventArgs e)
+
+        private void FlickControls(bool Enabled)
+        {
+            teConnectionServer.Enabled = Enabled;
+            teUserName.Enabled = Enabled;
+            tePassword.Enabled = Enabled;
+            teDomain.Enabled = Enabled;
+        }
+        private async void btnConnect_Click(object sender, EventArgs e)
         {
             try
             {
+                FlickControls(false);
                 SharedObjects._Client = new VMware.Horizon.RESTAPI.Client.HorizonRESTClient(teConnectionServer.Text);
-                SharedObjects._Client.Logon(teUserName.Text, tePassword.Text, teDomain.Text);
+                await SharedObjects._Client.LogonAsync(teUserName.Text, tePassword.Text, teDomain.Text);
                 frmDashboard frd = new frmDashboard();
                 frd.Show();
                 teUserName.Text = "";
@@ -34,6 +43,7 @@ namespace ExampleDashboard
             catch(Exception ex)
             {
                 System.Windows.MessageBox.Show(ex.ToString(), "Error Signing In");
+                FlickControls(true);
             }
            
             

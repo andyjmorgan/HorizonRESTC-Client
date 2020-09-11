@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using VMware.Horizon.RESTAPI.Api;
 using VMware.Horizon.RESTAPI.Model;
 
@@ -31,37 +32,83 @@ namespace VMware.Horizon.RESTAPI.Client
 
 
 
-        public void Logon(string username, string password, string domain)
+        private bool AddTokens(AuthTokens Token)
         {
-            var tokens = Authentication.LoginUser(new Model.AuthLogin(domain,
-                password,
-                username
-            ));
-            if (string.IsNullOrEmpty(tokens?.AccessToken) || string.IsNullOrEmpty(tokens?.RefreshToken))
+            if (string.IsNullOrEmpty(Token?.AccessToken) || string.IsNullOrEmpty(Token?.RefreshToken))
             {
                 throw new Exception("The tokens provided are empty or null");
             }
             else
             {
-                Tokens = tokens;
-                ClientConfiguration.AddApiKey("Authorization", string.Format("Bearer {0}", tokens.AccessToken));
+                Tokens = Token;
+                ClientConfiguration.AddApiKey("Authorization", string.Format("Bearer {0}", Token.AccessToken));
+                return true;
             }
         }
 
-        public void RefreshToken()
+        private bool RefreshToken(AccessToken Token)
         {
-            AccessToken Token = Authentication.RefreshAccessToken(new RefreshToken(Tokens.RefreshToken));
             if (string.IsNullOrEmpty(Token?._AccessToken))
             {
                 throw new Exception("Access Token received was null or empty");
             }
 
             ClientConfiguration.AddApiKey("Authorization", string.Format("Bearer {0}", Token._AccessToken));
+            return true;
         }
 
-        public void LogOut()
+        private bool LogOut(ApiResponse<object> LogoutResponse)
         {
-            Authentication.LogoutUser(new RefreshToken(Tokens.RefreshToken));
+            if (LogoutResponse.StatusCode == 200)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Logon(string username, string password, string domain)
+        {
+            AuthTokens tokens = Authentication.LoginUser(new Model.AuthLogin(domain,
+                password,
+                username
+            ));
+            return AddTokens(tokens);
+           
+        }
+        public async Task<bool> LogonAsync(string username, string password, string domain)
+        {
+            AuthTokens tokens = await Authentication.LoginUserAsync(new Model.AuthLogin(domain,
+                password,
+                username
+            ));
+            return AddTokens(tokens);
+        }
+
+
+
+        public bool RefreshToken()
+        {
+            AccessToken Token = Authentication.RefreshAccessToken(new RefreshToken(Tokens.RefreshToken));
+            return RefreshToken(Token);          
+        }
+        public async Task<bool> RefreshTokenAsync()
+        {
+            AccessToken Token = await Authentication.RefreshAccessTokenAsync(new RefreshToken(Tokens.RefreshToken));
+            return RefreshToken(Token);
+
+        }
+
+        public bool LogOut()
+        {
+            return LogOut(Authentication.LogoutUserWithHttpInfo(new RefreshToken(Tokens.RefreshToken)));
+        }
+
+        public async Task<bool> LogOutAsync()
+        {
+            return LogOut(await Authentication.LogoutUserAsyncWithHttpInfo(new RefreshToken(Tokens.RefreshToken)));
         }
 
         public Uri GetConnectionURI()
